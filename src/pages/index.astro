@@ -5,18 +5,29 @@ import http from "isomorphic-git/http/node";
 import { marked } from "marked";
 
 import { Markup, Markdown } from "astro-remote";
+import { fsReadFile } from "../utils/fs";
+import Layout from "../layouts/Layout.astro";
 
 const AI_README_URL = `https://github.com/yayxs/ai-front-end`;
 
+// try {
+//   await git.clone({
+//     fs,
+//     http,
+//     dir: `./pages`,
+//     url: AI_README_URL,
+//     corsProxy: "https://cors.isomorphic-git.org",
+//     singleBranch: true,
+//     depth: 1,
+//   });
+// } catch (error) {}
+
+let contents = "";
 try {
-  await git.clone({
-    fs,
-    http,
-    dir: `./pages`,
-    url: AI_README_URL,
-    corsProxy: "https://cors.isomorphic-git.org",
-    singleBranch: true,
-    depth: 1,
-  });
+  contents = (await fsReadFile("./src/content/test.md")) ?? "";
 } catch (error) {}
 ---
+
+<Layout title="Test">
+  <Markdown content={contents} />
+</Layout>
