@@ -1,5 +1,5 @@
 {
-  "name": "callous-crater",
+  "name": "docs-blog",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -10,8 +10,14 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^4.14.2",
     "@astrojs/check": "^0.9.2",
+    "astro": "^4.14.2",
+    "astro-remote": "^0.3.3",
+    "marked": "^14.0.0",
     "typescript": "^5.5.4"
+  },
+  "devDependencies": {
+    "prettier": "^3.3.3",
+    "prettier-plugin-astro": "^0.14.1"
   }
 }
