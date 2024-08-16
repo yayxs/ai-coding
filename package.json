@@ -11,9 +11,12 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.2",
+    "@isomorphic-git/cors-proxy": "^2.7.1",
     "astro": "^4.14.2",
     "astro-remote": "^0.3.3",
+    "isomorphic-git": "^1.27.1",
     "marked": "^14.0.0",
+    "memfs": "^4.11.1",
     "typescript": "^5.5.4"
   },
   "devDependencies": {
