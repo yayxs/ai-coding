@@ -1,6 +1,6 @@
 ---
 import git from "isomorphic-git";
-import { fs } from "memfs";
+import fs from "node:fs/promises";
 import http from "isomorphic-git/http/node";
 import { marked } from "marked";
 
@@ -8,18 +8,15 @@ import { Markup, Markdown } from "astro-remote";
 
 const AI_README_URL = `https://github.com/yayxs/ai-front-end`;
 
-git
-  .clone({
+try {
+  await git.clone({
     fs,
     http,
-    dir: `/yayxs-ai-front-end-main`,
+    dir: `./pages`,
     url: AI_README_URL,
     corsProxy: "https://cors.isomorphic-git.org",
-  })
-  .then((res) => {
-    console.log("clone success", res);
-  })
-  .catch((err) => {
-    console.log("clone error", err);
+    singleBranch: true,
+    depth: 1,
   });
+} catch (error) {}
 ---
