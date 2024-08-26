@@ -3,25 +3,17 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro check && astro build",
-    "preview": "astro preview",
-    "astro": "astro"
-  },
-  "dependencies": {
-    "@astrojs/check": "^0.9.2",
-    "@isomorphic-git/cors-proxy": "^2.7.1",
-    "astro": "^4.14.2",
-    "astro-remote": "^0.3.3",
-    "isomorphic-git": "^1.27.1",
-    "marked": "^14.0.0",
-    "memfs": "^4.11.1",
-    "typescript": "^5.5.4"
+    "dev": "vite dev",
+    "build": "vite build",
+    "preview": "vite build && vite preview"
   },
   "devDependencies": {
-    "@types/node": "^22.3.0",
-    "prettier": "^3.3.3",
-    "prettier-plugin-astro": "^0.14.1"
+    "vike": "^0.4.193",
+    "vite": "^5.4.2"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "^4.3.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   }
 }
