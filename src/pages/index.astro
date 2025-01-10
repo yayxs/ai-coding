@@ -1,33 +1,167 @@
 ---
-import git from "isomorphic-git";
-import fs from "node:fs/promises";
-import http from "isomorphic-git/http/node";
-import { marked } from "marked";
+import Layout from '../layouts/Layout.astro';
 
-import { Markup, Markdown } from "astro-remote";
-import { fsReadFile } from "../utils/fs";
-import Layout from "../layouts/Layout.astro";
+const translations = {
+  zh: {
+    title: "AI编程工具对比",
+    columns: {
+      product: "产品",
+      company: "所属",
+      platform: "产品属性",
+      pricing: "收费情况"
+    },
+    viewPricing: "查看定价"
+  },
+  en: {
+    title: "AI Coding Tools Comparison",
+    columns: {
+      product: "Product",
+      company: "Company",
+      platform: "Platform",
+      pricing: "Pricing"
+    },
+    viewPricing: "View Pricing"
+  }
+};
 
-const AI_README_URL = `https://github.com/yayxs/ai-front-end`;
-
-// try {
-//   await git.clone({
-//     fs,
-//     http,
-//     dir: `./pages`,
-//     url: AI_README_URL,
-//     corsProxy: "https://cors.isomorphic-git.org",
-//     singleBranch: true,
-//     depth: 1,
-//   });
-// } catch (error) {}
-
-let contents = "";
-try {
-  contents = (await fsReadFile("./src/content/test.md")) ?? "";
-} catch (error) {}
+const aiTools = [
+  {
+    name: "Cursor",
+    company: "Anysphere",
+    platform: {
+      zh: "独立编辑器",
+      en: "Standalone Editor"
+    },
+    pricing: "https://www.cursor.com/pricing"
+  }
+];
 ---
 
-<Layout title="Test">
-  <Markdown content={contents} />
+<Layout title="AI Coding Tools Comparison">
+  <main>
+    <h1 class="title-zh">AI编程工具对比</h1>
+    <h1 class="title-en">AI Coding Tools Comparison</h1>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th data-zh="产品" data-en="Product">产品</th>
+            <th data-zh="所属" data-en="Company">所属</th>
+            <th data-zh="产品属性" data-en="Platform">产品属性</th>
+            <th data-zh="收费情况" data-en="Pricing">收费情况</th>
+          </tr>
+        </thead>
+        <tbody>
+          {aiTools.map(tool => (
+            <tr>
+              <td>
+                <a href="https://www.cursor.com/" target="_blank" rel="noopener noreferrer">{tool.name}</a>
+              </td>
+              <td>{tool.company}</td>
+              <td data-zh={tool.platform.zh} data-en={tool.platform.en}>{tool.platform.zh}</td>
+              <td>
+                <a href={tool.pricing} target="_blank" rel="noopener noreferrer" data-zh="查看定价" data-en="View Pricing">查看定价</a>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </main>
 </Layout>
+
+<script>
+  function updateContent(language) {
+    // 更新标题
+    document.querySelector('.title-zh').style.display = language === 'zh' ? 'block' : 'none';
+    document.querySelector('.title-en').style.display = language === 'en' ? 'block' : 'none';
+
+    // 更新表头
+    document.querySelectorAll('th').forEach(th => {
+      th.textContent = th.getAttribute(`data-${language}`);
+    });
+
+    // 更新平台文本
+    document.querySelectorAll('td[data-zh]').forEach(td => {
+      td.textContent = td.getAttribute(`data-${language}`);
+    });
+
+    // 更新链接文本
+    document.querySelectorAll('a[data-zh]').forEach(a => {
+      a.textContent = a.getAttribute(`data-${language}`);
+    });
+  }
+
+  // 初始化语言
+  const initialLang = localStorage.getItem('language') || 'zh';
+  updateContent(initialLang);
+
+  // 监听语言变化
+  window.addEventListener('languageChange', (event) => {
+    updateContent(event.detail.language);
+  });
+</script>
+
+<style>
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--text-color);
+  }
+
+  .title-en {
+    display: none;
+  }
+
+  .table-container {
+    overflow-x: auto;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+    background: var(--bg-color);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+
+  th, td {
+    padding: 1rem;
+    text-align: left;
+    border: 1px solid var(--border-color);
+  }
+
+  th {
+    background: var(--header-bg);
+    font-weight: 600;
+    color: var(--header-text);
+  }
+
+  tr:hover {
+    background: var(--hover-color);
+  }
+
+  a {
+    color: var(--primary-color);
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 768px) {
+    th, td {
+      padding: 0.75rem;
+      font-size: 0.9rem;
+    }
+  }
+</style>
