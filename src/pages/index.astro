@@ -4,75 +4,146 @@ import Layout from '../layouts/Layout.astro';
 const aiTools = [
   {
     name: "Bolt",
+    nameCn: "",
     company: "StackBlitz",
     platform: {
       zh: "浏览器中使用",
       en: "Browser-based"
     },
-    pricing: "https://bolt.new/?showPricing=true"
+    pricing: "https://bolt.new/?showPricing=true",
+    url: "https://bolt.new/"
   },
   {
     name: "Cline",
+    nameCn: "",
     company: "",
     platform: {
       zh: "VSCode扩展",
       en: "VSCode Extension"
     },
-    pricing: ""
+    pricing: "",
+    url:`https://github.com/cline/cline`
   },
   {
     name: "Continue",
+    nameCn: "",
     company: "Continue team",
     platform: {
       zh: "VSCode扩展",
       en: "VSCode Extension"
     },
-    pricing: ""
+    pricing: "",
+    url:`https://www.continue.dev/`
   },
   {
     name: "Cursor",
+    nameCn: "",
     company: "Anysphere",
     platform: {
       zh: "独立编辑器",
       en: "Standalone Editor"
     },
-    pricing: "https://www.cursor.com/pricing"
+    pricing: "https://www.cursor.com/pricing",
+    url: "https://www.cursor.com/"
   },
   {
     name: "GitHub Copilot",
+    nameCn: "",
     company: "GitHub",
     platform: {
       zh: "VSCode扩展",
       en: "VSCode Extension"
     },
-    pricing: ""
+    pricing: "",
+    url:`https://github.com/features/copilot`
   },
   {
     name: "Windsurf",
+    nameCn: "",
     company: "Codeium",
     platform: {
       zh: "独立编辑器",
       en: "Standalone Editor"
     },
-    pricing: "https://codeium.com/pricing"
+    pricing: "https://codeium.com/pricing",
+    url: "https://codeium.com/"
   },
   {
     name: "v0",
+    nameCn: "",
     company: "Vercel",
     platform: {
       zh: "浏览器中使用",
       en: "Browser-based"
     },
-    pricing: "https://v0.dev/pricing"
+    pricing: "https://v0.dev/pricing",
+    url: "https://v0.dev/"
   },
   {
     name: "Lovable",
+    nameCn: "",
     company: "",
     platform: {
       zh: "浏览器中使用",
       en: "Browser-based"
     },
-    pricing: ""
+    pricing: "",
+    url:`https://lovable.dev/`
+  },
+  {
+    name: "PearAI",
+    nameCn: "",
+    company: "",
+    platform: {
+      zh: "独立编辑器",
+      en: "Standalone Editor"
+    },
+    pricing: "",
+    url:`https://trypear.ai/`
+  },
+  {
+    name: "Aider",
+    nameCn: "",
+    company: "",
+    platform: {
+      zh: "终端",
+      en: "Terminal"
+    },
+    pricing: "",
+    url:`https://aider.chat/`
+  },
+  {
+    name: "Cody",
+    nameCn: "",
+    company: "Sourcegraph",
+    platform: {
+      zh: "VSCode扩展",
+      en: "VSCode Extension"
+    },
+    pricing: "",
+    url:`https://sourcegraph.com/cody`
+  },
+  {
+    name: "Qodo formerly Codium",
+    nameCn: "",
+    company: "",
+    platform: {
+      zh: "VSCode扩展",
+      en: "VSCode Extension"
+    },
+    pricing: "",
+    url:`https://www.qodo.ai/`
+  },
+  {
+    name: "Tabnine",
+    nameCn: "",
+    company: "",
+    platform: {
+      zh: "VSCode扩展",
+      en: "VSCode Extension"
+    },
+    pricing: "",
+    url:`https://www.tabnine.com/`
   }
 ].sort((a, b) => a.name.localeCompare(b.name));
 ---
@@ -95,7 +166,11 @@ const aiTools = [
           {aiTools.map(tool => (
             <tr>
               <td>
-                <a href="https://www.cursor.com/" target="_blank" rel="noopener noreferrer">{tool.name}</a>
+                {tool.url ? (
+                  <a href={tool.url} target="_blank" rel="noopener noreferrer">{tool.nameCn || tool.name}</a>
+                ) : (
+                  <span>{tool.nameCn || tool.name}</span>
+                )}
               </td>
               <td>{tool.company}</td>
               <td data-zh={tool.platform.zh} data-en={tool.platform.en}>{tool.platform.zh}</td>
