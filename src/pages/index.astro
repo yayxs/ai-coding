@@ -1,30 +1,34 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-const translations = {
-  zh: {
-    title: "AI编程工具对比",
-    columns: {
-      product: "产品",
-      company: "所属",
-      platform: "产品属性",
-      pricing: "收费情况"
-    },
-    viewPricing: "查看定价"
-  },
-  en: {
-    title: "AI Coding Tools Comparison",
-    columns: {
-      product: "Product",
-      company: "Company",
-      platform: "Platform",
-      pricing: "Pricing"
-    },
-    viewPricing: "View Pricing"
-  }
-};
-
 const aiTools = [
+  {
+    name: "Bolt",
+    company: "StackBlitz",
+    platform: {
+      zh: "浏览器中使用",
+      en: "Browser-based"
+    },
+    pricing: "https://bolt.new/?showPricing=true"
+  },
+  {
+    name: "Cline",
+    company: "",
+    platform: {
+      zh: "VSCode扩展",
+      en: "VSCode Extension"
+    },
+    pricing: ""
+  },
+  {
+    name: "Continue",
+    company: "Continue team",
+    platform: {
+      zh: "VSCode扩展",
+      en: "VSCode Extension"
+    },
+    pricing: ""
+  },
   {
     name: "Cursor",
     company: "Anysphere",
@@ -33,8 +37,44 @@ const aiTools = [
       en: "Standalone Editor"
     },
     pricing: "https://www.cursor.com/pricing"
+  },
+  {
+    name: "GitHub Copilot",
+    company: "GitHub",
+    platform: {
+      zh: "VSCode扩展",
+      en: "VSCode Extension"
+    },
+    pricing: ""
+  },
+  {
+    name: "Windsurf",
+    company: "Codeium",
+    platform: {
+      zh: "独立编辑器",
+      en: "Standalone Editor"
+    },
+    pricing: "https://codeium.com/pricing"
+  },
+  {
+    name: "v0",
+    company: "Vercel",
+    platform: {
+      zh: "浏览器中使用",
+      en: "Browser-based"
+    },
+    pricing: "https://v0.dev/pricing"
+  },
+  {
+    name: "Lovable",
+    company: "",
+    platform: {
+      zh: "浏览器中使用",
+      en: "Browser-based"
+    },
+    pricing: ""
   }
-];
+].sort((a, b) => a.name.localeCompare(b.name));
 ---
 
 <Layout title="AI Coding Tools Comparison">
@@ -59,9 +99,13 @@ const aiTools = [
               </td>
               <td>{tool.company}</td>
               <td data-zh={tool.platform.zh} data-en={tool.platform.en}>{tool.platform.zh}</td>
-              <td>
-                <a href={tool.pricing} target="_blank" rel="noopener noreferrer" data-zh="查看定价" data-en="View Pricing">查看定价</a>
-              </td>
+                <td>
+                {tool.pricing ? (
+                  <a href={tool.pricing} target="_blank" rel="noopener noreferrer" data-zh="查看定价" data-en="View Pricing">查看定价</a>
+                ) : (
+                  <span data-zh="免费" data-en="Free"></span>
+                )}
+                </td>
             </tr>
           ))}
         </tbody>
@@ -73,8 +117,8 @@ const aiTools = [
 <script>
   function updateContent(language) {
     // 更新标题
-    document.querySelector('.title-zh').style.display = language === 'zh' ? 'block' : 'none';
-    document.querySelector('.title-en').style.display = language === 'en' ? 'block' : 'none';
+    (document.querySelector('.title-zh') as HTMLElement).style.display = language === 'zh' ? 'block' : 'none';
+    (document.querySelector('.title-en') as HTMLElement).style.display = language === 'en' ? 'block' : 'none';
 
     // 更新表头
     document.querySelectorAll('th').forEach(th => {
@@ -97,7 +141,7 @@ const aiTools = [
   updateContent(initialLang);
 
   // 监听语言变化
-  window.addEventListener('languageChange', (event) => {
+  window.addEventListener('languageChange', (event: CustomEvent) => {
     updateContent(event.detail.language);
   });
 </script>
