@@ -1,0 +1,118 @@
+---
+import LanguageIcon from './icons/LanguageIcon.astro';
+---
+
+<div class="language-switch">
+  <button 
+    id="langSwitch"
+    aria-label="切换语言"
+    title="切换语言 / Switch Language">
+    <LanguageIcon />
+    <span class="lang-text" data-zh="中文" data-en="EN">中文</span>
+  </button>
+</div>
+
+<script>
+  const button = document.getElementById('langSwitch');
+  const langText = button?.querySelector('.lang-text');
+  const currentLang = localStorage.getItem('language') || 'zh';
+
+  // 初始化语言状态
+  document.documentElement.setAttribute('data-language', currentLang);
+  if (langText) {
+    langText.textContent = langText.getAttribute(`data-${currentLang}`);
+  }
+
+  // 更新页面中所有带有 data-zh 和 data-en 属性的元素
+  function updateContent(language: string) {
+    document.querySelectorAll('[data-zh][data-en]').forEach(el => {
+      const text = el.getAttribute(`data-${language}`);
+      if (text) {
+        if (el instanceof HTMLElement) {
+          el.textContent = text;
+        } else if (el instanceof SVGElement) {
+          el.textContent = text;
+        }
+      }
+    });
+  }
+
+  // 语言切换事件监听
+  button?.addEventListener('click', () => {
+    const currentLang = localStorage.getItem('language') || 'zh';
+    const newLang = currentLang === 'zh' ? 'en' : 'zh';
+    
+    // 更新语言状态
+    localStorage.setItem('language', newLang);
+    document.documentElement.setAttribute('data-language', newLang);
+    
+    // 更新按钮文本
+    if (langText) {
+      langText.textContent = langText.getAttribute(`data-${newLang}`);
+    }
+
+    // 更新页面内容
+    updateContent(newLang);
+
+    // 触发自定义事件以通知其他组件
+    window.dispatchEvent(new CustomEvent('languageChange', { 
+      detail: { language: newLang } 
+    }));
+  });
+
+  // 初始化页面内容
+  updateContent(currentLang);
+</script>
+
+<style>
+  .language-switch button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    height: 2.25rem;
+    padding: 0 0.75rem;
+    color: var(--text-color);
+    background: transparent;
+    border: 1px solid var(--border-color);
+    border-radius: 1.125rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: system-ui, -apple-system, sans-serif;
+  }
+
+  .language-switch button:hover {
+    background: var(--hover-color);
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .language-switch button:active {
+    transform: translateY(0);
+  }
+
+  .language-switch button:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px var(--bg-color), 0 0 0 4px var(--primary-color);
+  }
+
+  .lang-text {
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.025em;
+    text-transform: capitalize;
+  }
+
+  @media (max-width: 640px) {
+    .language-switch button {
+      padding: 0 0.5rem;
+    }
+    
+    .lang-text {
+      font-size: 0.8125rem;
+    }
+  }
+</style> 

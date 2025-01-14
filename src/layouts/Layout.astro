@@ -1,16 +1,20 @@
 ---
+import LanguageIcon from '../components/icons/LanguageIcon.astro';
+import GithubIcon from '../components/icons/GithubIcon.astro';
+
 interface Props {
 	title: string;
+	description: string;
 }
 
-const { title } = Astro.props;
+const { title, description } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="zh-CN">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="AI编程工具对比 - 比较主流AI编程助手的功能、平台和定价" />
+		<meta name="description" content={description} />
 		<meta name="keywords" content="AI编程工具,代码助手,编程效率,AI代码生成,编程工具对比" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -23,14 +27,14 @@ const { title } = Astro.props;
 		<meta property="og:type" content="website" />
 		<meta property="og:url" content="https://ai-coding.netlify.app/" />
 		<meta property="og:title" content={title} />
-		<meta property="og:description" content="AI编程工具对比 - 比较主流AI编程助手的功能、平台和定价" />
+		<meta property="og:description" content={description} />
 		<meta property="og:image" content="https://ai-coding.netlify.app/images/og-image.jpg" />
 
 		{/* Twitter */}
 		<meta property="twitter:card" content="summary_large_image" />
 		<meta property="twitter:url" content="https://ai-coding.netlify.app/" />
 		<meta property="twitter:title" content={title} />
-		<meta property="twitter:description" content="AI编程工具对比 - 比较主流AI编程助手的功能、平台和定价" />
+		<meta property="twitter:description" content={description} />
 		<meta property="twitter:image" content="https://ai-coding.netlify.app/images/og-image.jpg" />
 
 		{/* JSON-LD */}
@@ -39,7 +43,7 @@ const { title } = Astro.props;
 			"@context": "https://schema.org",
 			"@type": "WebPage",
 			"name": "{title}",
-			"description": "AI编程工具对比 - 比较主流AI编程助手的功能、平台和定价",
+			"description": "{description}",
 			"url": "https://ai-coding.netlify.app/",
 			"image": "https://ai-coding.netlify.app/images/og-image.jpg",
 			"mainEntity": {
@@ -49,8 +53,6 @@ const { title } = Astro.props;
 			}
 		}
 		</script>
-
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 	</head>
 	<body>
 		<header>
@@ -59,11 +61,11 @@ const { title } = Astro.props;
 				</div>
 				<div class="header-right">
 					<a href="https://github.com/yayxs/ai-coding" target="_blank" rel="noopener noreferrer" class="github-link">
-						<i class="fab fa-github"></i>
+						<GithubIcon />
 					</a>
 					<div class="language-switch">
-						<button id="zh" title="切换到中文">
-							<i class="fas fa-language"></i>
+						<button id="langSwitch" title="切换语言 / Switch Language">
+							<LanguageIcon />
 						</button>
 					</div>
 				</div>
@@ -74,14 +76,14 @@ const { title } = Astro.props;
 </html>
 
 <script>
-	const button = document.querySelector('.language-switch button');
+	const button = document.getElementById('langSwitch');
 	const currentLang = localStorage.getItem('language') || 'zh';
 
 	// 初始化语言状态
 	document.documentElement.setAttribute('data-language', currentLang);
 
 	// 语言切换事件监听
-	button.addEventListener('click', () => {
+	button?.addEventListener('click', () => {
 		const currentLang = localStorage.getItem('language') || 'zh';
 		const newLang = currentLang === 'zh' ? 'en' : 'zh';
 		localStorage.setItem('language', newLang);
@@ -110,7 +112,7 @@ const { title } = Astro.props;
 
 	body {
 		margin: 0;
-		padding: 0;
+		padding: 5rem 0 0;
 		color: var(--text-color);
 	}
 
@@ -123,12 +125,6 @@ const { title } = Astro.props;
 		background: var(--header-bg);
 		padding: 1rem 0;
 		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-	}
-
-	body {
-		margin: 0;
-		padding: 5rem 0 0;
-		color: var(--text-color);
 	}
 
 	.header-content {
@@ -165,10 +161,6 @@ const { title } = Astro.props;
 		transform: scale(1.05);
 	}
 
-	.github-link i {
-		font-size: 1.2rem;
-	}
-
 	.logo {
 		font-size: 1.8rem;
 		color: var(--primary-color);
@@ -187,23 +179,14 @@ const { title } = Astro.props;
 		transition: all 0.2s ease;
 	}
 
-	.language-switch button i {
-		font-size: 1.2rem;
-		color: var(--text-color);
-	}
-
 	.language-switch button:hover {
 		background: var(--hover-color);
 		transform: scale(1.05);
 	}
 
-	.language-switch button.active {
-		background: var(--primary-color);
-		border-color: var(--primary-color);
-	}
-
-	.language-switch button.active i {
-		color: white;
+	.language-switch button:focus {
+		outline: 2px solid var(--primary-color);
+		outline-offset: 2px;
 	}
 
 	/* 简约滚动条样式 */

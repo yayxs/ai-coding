@@ -1,225 +1,19 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import AiToolsTable from '../components/AiToolsTable.astro';
+import { aiTools } from '../data/aiTools';
 
-const aiTools = [
-  {
-    name: "Bolt",
-    nameCn: "",
-    company: "StackBlitz",
-    platform: {
-      zh: "浏览器中使用",
-      en: "Browser-based"
-    },
-    pricing: "https://bolt.new/?showPricing=true",
-    url: "https://bolt.new/"
-  },
-  {
-    name: "Cline",
-    nameCn: "",
-    company: "",
-    platform: {
-      zh: "VSCode扩展",
-      en: "VSCode Extension"
-    },
-    pricing: "",
-    url:`https://github.com/cline/cline`
-  },
-  {
-    name: "Continue",
-    nameCn: "",
-    company: "Continue team",
-    platform: {
-      zh: "VSCode扩展",
-      en: "VSCode Extension"
-    },
-    pricing: "",
-    url:`https://www.continue.dev/`
-  },
-  {
-    name: "Cursor",
-    nameCn: "",
-    company: "Anysphere",
-    platform: {
-      zh: "独立编辑器",
-      en: "Standalone Editor"
-    },
-    pricing: "https://www.cursor.com/pricing",
-    url: "https://www.cursor.com/"
-  },
-  {
-    name: "GitHub Copilot",
-    nameCn: "",
-    company: "GitHub",
-    platform: {
-      zh: "VSCode扩展",
-      en: "VSCode Extension"
-    },
-    pricing: "",
-    url:`https://github.com/features/copilot`
-  },
-  {
-    name: "Windsurf",
-    nameCn: "",
-    company: "Codeium",
-    platform: {
-      zh: "独立编辑器",
-      en: "Standalone Editor"
-    },
-    pricing: "https://codeium.com/pricing",
-    url: "https://codeium.com/"
-  },
-  {
-    name: "v0",
-    nameCn: "",
-    company: "Vercel",
-    platform: {
-      zh: "浏览器中使用",
-      en: "Browser-based"
-    },
-    pricing: "https://v0.dev/pricing",
-    url: "https://v0.dev/"
-  },
-  {
-    name: "Lovable",
-    nameCn: "",
-    company: "",
-    platform: {
-      zh: "浏览器中使用",
-      en: "Browser-based"
-    },
-    pricing: "",
-    url:`https://lovable.dev/`
-  },
-  {
-    name: "PearAI",
-    nameCn: "",
-    company: "",
-    platform: {
-      zh: "独立编辑器",
-      en: "Standalone Editor"
-    },
-    pricing: "",
-    url:`https://trypear.ai/`
-  },
-  {
-    name: "Aider",
-    nameCn: "",
-    company: "",
-    platform: {
-      zh: "终端",
-      en: "Terminal"
-    },
-    pricing: "",
-    url:`https://aider.chat/`
-  },
-  {
-    name: "Cody",
-    nameCn: "",
-    company: "Sourcegraph",
-    platform: {
-      zh: "VSCode扩展",
-      en: "VSCode Extension"
-    },
-    pricing: "",
-    url:`https://sourcegraph.com/cody`
-  },
-  {
-    name: "Qodo formerly Codium",
-    nameCn: "",
-    company: "",
-    platform: {
-      zh: "VSCode扩展",
-      en: "VSCode Extension"
-    },
-    pricing: "",
-    url:`https://www.qodo.ai/`
-  },
-  {
-    name: "Tabnine",
-    nameCn: "",
-    company: "",
-    platform: {
-      zh: "VSCode扩展",
-      en: "VSCode Extension"
-    },
-    pricing: "",
-    url:`https://www.tabnine.com/`
-  }
-].sort((a, b) => a.name.localeCompare(b.name));
+const description = "AI编程工具对比 - 比较主流AI编程助手的功能、平台和定价";
+const title = "AI编程工具对比 | AI Coding Tools Comparison";
 ---
 
-<Layout title="AI Coding Tools Comparison">
+<Layout title={title} description={description}>
   <main>
     <h1 class="title-zh">AI编程工具对比</h1>
     <h1 class="title-en">AI Coding Tools Comparison</h1>
-    <div class="table-container">
-      <table>
-        <thead>
-          <tr>
-            <th data-zh="产品" data-en="Product">产品</th>
-            <th data-zh="所属" data-en="Company">所属</th>
-            <th data-zh="产品属性" data-en="Platform">产品属性</th>
-            <th data-zh="收费情况" data-en="Pricing">收费情况</th>
-          </tr>
-        </thead>
-        <tbody>
-          {aiTools.map(tool => (
-            <tr>
-              <td>
-                {tool.url ? (
-                  <a href={tool.url} target="_blank" rel="noopener noreferrer">{tool.nameCn || tool.name}</a>
-                ) : (
-                  <span>{tool.nameCn || tool.name}</span>
-                )}
-              </td>
-              <td>{tool.company}</td>
-              <td data-zh={tool.platform.zh} data-en={tool.platform.en}>{tool.platform.zh}</td>
-                <td>
-                {tool.pricing ? (
-                  <a href={tool.pricing} target="_blank" rel="noopener noreferrer" data-zh="查看定价" data-en="View Pricing">查看定价</a>
-                ) : (
-                  <span data-zh="免费" data-en="Free"></span>
-                )}
-                </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+    <AiToolsTable tools={aiTools} />
   </main>
 </Layout>
-
-<script>
-  function updateContent(language) {
-    // 更新标题
-    (document.querySelector('.title-zh') as HTMLElement).style.display = language === 'zh' ? 'block' : 'none';
-    (document.querySelector('.title-en') as HTMLElement).style.display = language === 'en' ? 'block' : 'none';
-
-    // 更新表头
-    document.querySelectorAll('th').forEach(th => {
-      th.textContent = th.getAttribute(`data-${language}`);
-    });
-
-    // 更新平台文本
-    document.querySelectorAll('td[data-zh]').forEach(td => {
-      td.textContent = td.getAttribute(`data-${language}`);
-    });
-
-    // 更新链接文本
-    document.querySelectorAll('a[data-zh]').forEach(a => {
-      a.textContent = a.getAttribute(`data-${language}`);
-    });
-  }
-
-  // 初始化语言
-  const initialLang = localStorage.getItem('language') || 'zh';
-  updateContent(initialLang);
-
-  // 监听语言变化
-  window.addEventListener('languageChange', (event: CustomEvent) => {
-    updateContent(event.detail.language);
-  });
-</script>
 
 <style>
   main {
@@ -240,47 +34,11 @@ const aiTools = [
     display: none;
   }
 
-  .table-container {
-    overflow-x: auto;
+  :global([data-language="en"]) .title-zh {
+    display: none;
   }
 
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 0 auto;
-    background: var(--bg-color);
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  }
-
-  th, td {
-    padding: 1rem;
-    text-align: left;
-    border: 1px solid var(--border-color);
-  }
-
-  th {
-    background: var(--header-bg);
-    font-weight: 600;
-    color: var(--header-text);
-  }
-
-  tr:hover {
-    background: var(--hover-color);
-  }
-
-  a {
-    color: var(--primary-color);
-    text-decoration: none;
-  }
-
-  a:hover {
-    text-decoration: underline;
-  }
-
-  @media (max-width: 768px) {
-    th, td {
-      padding: 0.75rem;
-      font-size: 0.9rem;
-    }
+  :global([data-language="en"]) .title-en {
+    display: block;
   }
 </style>
