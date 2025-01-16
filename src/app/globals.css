@@ -5,25 +5,18 @@
 :root {
   --foreground-rgb: 17, 24, 39;
   --background-rgb: 255, 255, 255;
+  --primary: 220deg 91% 54%;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 243, 244, 246;
     --background-rgb: 17, 24, 39;
+    --primary: 217deg 92% 76%;
   }
 }
 
 body {
   color: rgb(var(--foreground-rgb));
   background: rgb(var(--background-rgb));
-}
-
-/* 语言切换相关样式 */
-[data-language="en"] [data-zh-only] {
-  display: none;
-}
-
-[data-language="zh"] [data-en-only] {
-  display: none;
 } 
