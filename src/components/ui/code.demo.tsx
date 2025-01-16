@@ -7,7 +7,6 @@ function TypeTableDemo() {
         percentage: {
           description: "The percentage of scroll position to display the roll button",
           type: "number",
-          default: "0.2"
         }
       }}
       className="min-w-[400px]"
