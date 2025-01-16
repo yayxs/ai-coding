@@ -12,9 +12,9 @@ const AiToolsTable: FC<AiToolsTableProps> = ({ tools }) => {
   const toolsData = tools.reduce((acc, tool) => {
     acc[tool.name] = {
       description: (
-        <div className="flex flex-col gap-2">
-          
-        </div>
+        <span className="text-gray-700 dark:text-gray-300">
+          {tool.author ? `by ${tool.author}` : ''}
+        </span>
       ),
       type: tool.platform.en,
       typeDescription: tool.platform.en,
@@ -24,10 +24,10 @@ const AiToolsTable: FC<AiToolsTableProps> = ({ tools }) => {
   }, {} as Record<string, any>)
 
   return (
-    <div className="w-full overflow-hidden rounded-lg border border-gray-200 bg-white/50 backdrop-blur dark:border-gray-800 dark:bg-gray-900/50">
+    <div className="w-full overflow-auto rounded-lg border border-gray-200 bg-white/50 backdrop-blur dark:border-gray-800 dark:bg-gray-900/50">
       <TypeTable
         type={toolsData}
-        className="min-w-[800px]"
+        className="w-full min-w-[640px]"
       />
     </div>
   )
