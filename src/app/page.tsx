@@ -4,9 +4,12 @@ import { aiTools } from '@/data/aiTools'
 
 const Home: FC = () => {
   return (
-    <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-      <AiToolsTable tools={aiTools} />
-    </main>
+    <div className="flex flex-col items-center justify-start gap-12">
+      
+      <div className="w-full">
+        <AiToolsTable tools={aiTools} />
+      </div>
+    </div>
   )
 }
 

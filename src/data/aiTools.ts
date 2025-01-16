@@ -1,7 +1,6 @@
 export interface AiTool {
   name: string;
-  nameCn: string;
-  company: string;
+  author: string;
   platform: {
     zh: string;
     en: string;
@@ -12,8 +11,7 @@ export interface AiTool {
 export const aiTools: AiTool[] = [
   {
     name: "Bolt",
-    nameCn: "",
-    company: "StackBlitz",
+    author: "StackBlitz",
     platform: {
       zh: "浏览器中使用",
       en: "Browser-based"
@@ -22,8 +20,7 @@ export const aiTools: AiTool[] = [
   },
   {
     name: "Cline",
-    nameCn: "",
-    company: "",
+    author: "",
     platform: {
       zh: "VSCode扩展",
       en: "VSCode Extension"
@@ -32,8 +29,7 @@ export const aiTools: AiTool[] = [
   },
   {
     name: "Continue",
-    nameCn: "",
-    company: "Continue team",
+    author: "Continue team",
     platform: {
       zh: "VSCode扩展",
       en: "VSCode Extension"
@@ -42,8 +38,7 @@ export const aiTools: AiTool[] = [
   },
   {
     name: "Cursor",
-    nameCn: "",
-    company: "Anysphere",
+    author: "Anysphere",
     platform: {
       zh: "编辑器",
       en: "Editor"
@@ -52,8 +47,7 @@ export const aiTools: AiTool[] = [
   },
   {
     name: "GitHub Copilot",
-    nameCn: "",
-    company: "GitHub",
+    author: "GitHub",
     platform: {
       zh: "VSCode扩展",
       en: "VSCode Extension"
@@ -62,8 +56,7 @@ export const aiTools: AiTool[] = [
   },
   {
     name: "Windsurf",
-    nameCn: "",
-    company: "Codeium",
+    author: "Codeium",
     platform: {
       zh: "编辑器",
       en: "Editor"
@@ -72,8 +65,7 @@ export const aiTools: AiTool[] = [
   },
   {
     name: "v0",
-    nameCn: "",
-    company: "Vercel",
+    author: "Vercel",
     platform: {
       zh: "浏览器中使用",
       en: "Browser-based"
@@ -82,8 +74,7 @@ export const aiTools: AiTool[] = [
   },
   {
     name: "Lovable",
-    nameCn: "",
-    company: "",
+    author: "",
     platform: {
       zh: "浏览器中使用",
       en: "Browser-based"
@@ -92,8 +83,7 @@ export const aiTools: AiTool[] = [
   },
   {
     name: "PearAI",
-    nameCn: "",
-    company: "",
+    author: "",
     platform: {
       zh: "编辑器",
       en: "Editor"
@@ -102,8 +92,7 @@ export const aiTools: AiTool[] = [
   },
   {
     name: "Aider",
-    nameCn: "",
-    company: "",
+    author: "",
     platform: {
       zh: "终端",
       en: "Terminal"
@@ -112,8 +101,7 @@ export const aiTools: AiTool[] = [
   },
   {
     name: "Cody",
-    nameCn: "",
-    company: "Sourcegraph",
+    author: "Sourcegraph",
     platform: {
       zh: "VSCode扩展",
       en: "VSCode Extension"
@@ -122,8 +110,7 @@ export const aiTools: AiTool[] = [
   },
   {
     name: "Qodo formerly Codium",
-    nameCn: "",
-    company: "",
+    author: "",
     platform: {
       zh: "VSCode扩展",
       en: "VSCode Extension"
@@ -132,8 +119,7 @@ export const aiTools: AiTool[] = [
   },
   {
     name: "Tabnine",
-    nameCn: "",
-    company: "",
+    author: "",
     platform: {
       zh: "VSCode扩展",
       en: "VSCode Extension"
@@ -142,12 +128,20 @@ export const aiTools: AiTool[] = [
   },
   {
     name: "Void",
-    nameCn: "",
-    company: "",
+    author: "",
     platform: {
       zh: "编辑器",
       en: "Editor"
     },
     url: "https://voideditor.com/"
+  },
+  {
+    name: "sitebrew.ai",
+    author: "",
+    platform: {
+      zh: "浏览器中使用",
+      en: "Browser-based"
+    },
+    url: "https://www.sitebrew.ai/"
   }
 ].sort((a, b) => a.name.localeCompare(b.name)); 
