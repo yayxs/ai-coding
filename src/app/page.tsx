@@ -1,16 +1,10 @@
-import { FC } from 'react'
-import { AiToolsTable } from '@/components/ClientComponents'
+import { AiToolsGrid } from '@/components/AiToolsGrid'
 import { aiTools } from '@/data/aiTools'
 
-const Home: FC = () => {
+export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-start gap-12">
-      
-      <div className="w-full">
-        <AiToolsTable tools={aiTools} />
-      </div>
-    </div>
+    <main className='flex min-h-screen flex-col items-center p-2'>
+      <AiToolsGrid tools={aiTools} />
+    </main>
   )
 }
-
-export default Home 

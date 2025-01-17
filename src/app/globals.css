@@ -19,6 +19,21 @@
 body {
   color: rgb(var(--foreground-rgb));
   background: rgb(var(--background-rgb));
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* 移动端基础样式 */
+@media (max-width: 640px) {
+  html {
+    font-size: 14px;
+  }
+
+  body {
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
 }
 
 /* 自定义滚动条样式 */
@@ -48,4 +63,4 @@ body {
 * {
   scrollbar-width: thin;
   scrollbar-color: rgba(var(--foreground-rgb), 0.2) transparent;
-} 
+}
