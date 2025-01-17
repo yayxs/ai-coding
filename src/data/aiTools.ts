@@ -1,5 +1,5 @@
 export interface AiTool {
-  logoImg?: string // 这个产品的logo图片
+  logoComponent?: string // 存储logo组件名称
   whatsTheName: string // 这个产品的名字是什么，不管是编辑器还是网站还是什么
   urlLink: string // 这个产品网站的链接
   description: string // 这个产品的简单描述
@@ -14,88 +14,74 @@ export interface AiTool {
 
 export const aiTools: AiTool[] = [
   {
-    logoImg: '',
+    logoComponent: 'Cursor',
     whatsTheName: 'Cursor',
     urlLink: 'https://www.cursor.com/',
-    description:
-      'Built to make you extraordinarily productive, Cursor is the best way to code with AI.',
+    description: '最顶的原生AI编辑器，类似VSCode',
     howToUseType: 'AI-native Editor'
   },
   {
-    logoImg: '',
-    whatsTheName: 'Windsurf',
-    urlLink: 'https://codeium.com/',
-    description: 'Windsurf是一个编辑器AI工具',
-    howToUseType: 'AI-native Editor'
-  },
-  {
-    logoImg: '',
+    logoComponent: 'V0',
     whatsTheName: 'v0',
     urlLink: 'https://v0.dev/',
     description: 'v0 is your always-on pair-programmer.',
     howToUseType: 'Browser-based'
   },
   {
-    logoImg: '',
+    whatsTheName: 'Windsurf',
+    urlLink: 'https://codeium.com/',
+    description: 'Windsurf是一个编辑器AI工具',
+    howToUseType: 'AI-native Editor'
+  },
+  {
     whatsTheName: 'Bolt',
     urlLink: 'https://bolt.new/',
     description: 'Bolt是一个基于浏览器的AI工具',
     howToUseType: 'Browser-based'
   },
-
   {
-    logoImg: '',
     whatsTheName: 'Cline',
     urlLink: 'https://github.com/cline/cline',
     description: 'Cline是一个VSCode扩展AI工具',
     howToUseType: 'VSCode Extension'
   },
   {
-    logoImg: '',
     whatsTheName: 'Continue',
     urlLink: 'https://www.continue.dev/',
     description: 'Continue是一个VSCode扩展AI工具',
     howToUseType: 'VSCode Extension'
   },
-
   {
-    logoImg: '',
     whatsTheName: 'GitHub Copilot',
     urlLink: 'https://github.com/features/copilot',
     description: 'GitHub Copilot是一个VSCode扩展AI工具',
     howToUseType: 'VSCode Extension'
   },
-
   {
-    logoImg: '',
     whatsTheName: 'Lovable',
     urlLink: 'https://lovable.dev/',
     description: 'Lovable是一个基于浏览器的AI工具',
     howToUseType: 'Browser-based'
   },
   {
-    logoImg: '',
     whatsTheName: 'PearAI',
     urlLink: 'https://trypear.ai/',
     description: 'PearAI是一个编辑器AI工具',
     howToUseType: 'AI-native Editor'
   },
   {
-    logoImg: '',
     whatsTheName: 'Aider',
     urlLink: 'https://aider.chat/',
     description: 'Aider是一个终端AI工具',
     howToUseType: 'Terminal'
   },
   {
-    logoImg: '',
     whatsTheName: 'Cody',
     urlLink: 'https://sourcegraph.com/cody',
     description: 'Cody是一个VSCode扩展AI工具',
     howToUseType: 'VSCode Extension'
   },
   {
-    logoImg: '',
     whatsTheName: 'Qodo formerly Codium',
     urlLink: 'https://www.qodo.ai/',
     description:
@@ -103,7 +89,6 @@ export const aiTools: AiTool[] = [
     howToUseType: 'VSCode Extension'
   },
   {
-    logoImg: '',
     whatsTheName: 'Tabnine',
     urlLink: 'https://www.tabnine.com/',
     description:
@@ -111,7 +96,6 @@ export const aiTools: AiTool[] = [
     howToUseType: 'VSCode Extension'
   },
   {
-    logoImg: '',
     whatsTheName: 'Void',
     urlLink: 'https://voideditor.com/',
     description:
@@ -119,14 +103,12 @@ export const aiTools: AiTool[] = [
     howToUseType: 'AI-native Editor'
   },
   {
-    logoImg: '',
     whatsTheName: 'sitebrew.ai',
     urlLink: 'https://www.sitebrew.ai/',
     description: 'Generate a site and share it with the world, in seconds',
     howToUseType: 'Browser-based'
   },
   {
-    logoImg: '',
     whatsTheName: 'Aide',
     urlLink: 'https://aide.dev/',
     description:
@@ -134,7 +116,6 @@ export const aiTools: AiTool[] = [
     howToUseType: 'AI-native Editor'
   },
   {
-    logoImg: '',
     whatsTheName: 'MarsCode',
     urlLink: 'https://www.marscode.com/',
     description:
