@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { Button } from './button'
+import { Github } from 'lucide-react'
 
 export function Header() {
   return (
@@ -16,7 +17,7 @@ export function Header() {
                 target='_blank'
                 rel='noreferrer'
               >
-                <span className='sr-only'>GitHub</span>
+                <Github />
               </Link>
             </Button>
           </div>

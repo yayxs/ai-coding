@@ -6,10 +6,10 @@ export interface AiTool {
   // 产品作者
   // 使用的方式，是浏览器中使用还是VSCode扩展还是编辑器
   howToUseType:
-    | 'Browser-based'
-    | 'VSCode Extension'
-    | 'AI-native Editor'
-    | 'Terminal'
+  | 'In browser'
+  | 'VSCode Extension'
+  | 'AI-native Editor'
+  | 'Terminal'
 }
 
 export const aiTools: AiTool[] = [
@@ -17,7 +17,13 @@ export const aiTools: AiTool[] = [
     logoComponent: 'Cursor',
     whatsTheName: 'Cursor',
     urlLink: 'https://www.cursor.com/',
-    description: '最顶的原生AI编辑器，类似VSCode',
+    description: '宇宙最强AI原生代码编辑器',
+    howToUseType: 'AI-native Editor'
+  },
+  {
+    whatsTheName: 'Windsurf',
+    urlLink: 'https://codeium.com/',
+    description: '代码像魔法一般跳动',
     howToUseType: 'AI-native Editor'
   },
   {
@@ -25,43 +31,38 @@ export const aiTools: AiTool[] = [
     whatsTheName: 'v0',
     urlLink: 'https://v0.dev/',
     description: 'v0 is your always-on pair-programmer.',
-    howToUseType: 'Browser-based'
+    howToUseType: 'In browser'
   },
-  {
-    whatsTheName: 'Windsurf',
-    urlLink: 'https://codeium.com/',
-    description: 'Windsurf是一个编辑器AI工具',
-    howToUseType: 'AI-native Editor'
-  },
+
   {
     whatsTheName: 'Bolt',
     urlLink: 'https://bolt.new/',
     description: 'Bolt是一个基于浏览器的AI工具',
-    howToUseType: 'Browser-based'
+    howToUseType: 'In browser'
   },
   {
-    whatsTheName: 'Cline',
+    whatsTheName: 'Cline or Roo-Cline',
     urlLink: 'https://github.com/cline/cline',
-    description: 'Cline是一个VSCode扩展AI工具',
+    description: '使VSCode像Cursor一样',
     howToUseType: 'VSCode Extension'
   },
   {
     whatsTheName: 'Continue',
     urlLink: 'https://www.continue.dev/',
-    description: 'Continue是一个VSCode扩展AI工具',
+    description: '代码自动补全',
     howToUseType: 'VSCode Extension'
   },
   {
     whatsTheName: 'GitHub Copilot',
     urlLink: 'https://github.com/features/copilot',
-    description: 'GitHub Copilot是一个VSCode扩展AI工具',
+    description: '免费了',
     howToUseType: 'VSCode Extension'
   },
   {
     whatsTheName: 'Lovable',
     urlLink: 'https://lovable.dev/',
     description: 'Lovable是一个基于浏览器的AI工具',
-    howToUseType: 'Browser-based'
+    howToUseType: 'In browser'
   },
   {
     whatsTheName: 'PearAI',
@@ -106,7 +107,7 @@ export const aiTools: AiTool[] = [
     whatsTheName: 'sitebrew.ai',
     urlLink: 'https://www.sitebrew.ai/',
     description: 'Generate a site and share it with the world, in seconds',
-    howToUseType: 'Browser-based'
+    howToUseType: 'In browser'
   },
   {
     whatsTheName: 'Aide',
@@ -119,7 +120,7 @@ export const aiTools: AiTool[] = [
     whatsTheName: 'MarsCode',
     urlLink: 'https://www.marscode.com/',
     description:
-      'MarsCode IDE is an AI-powered cloud-based integrated development environment (IDE).',
-    howToUseType: 'Browser-based'
+      '字节系出品',
+    howToUseType: 'In browser'
   }
 ]

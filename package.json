@@ -1,6 +1,7 @@
 {
   "name": "ai-coding",
   "version": "0.0.2",
+  "description": "A project for comparing AI coding tools and platforms.",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -8,10 +9,30 @@
     "start": "next start",
     "lint": "next lint"
   },
+  "keywords": [
+    "ai",
+    "coding",
+    "tools",
+    "comparison",
+    "nextjs",
+    "react",
+    "typescript"
+  ],
+  "author": "vanlee <hellovanlee@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yayxs/ai-coding.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yayxs/ai-coding/issues"
+  },
+  "homepage": "https://github.com/yayxs/ai-coding#readme",
   "dependencies": {
     "@radix-ui/react-slot": "^1.1.1",
     "class-variance-authority": "^0.7.1",
-    "framer-motion": "^11.18.0",
+    "framer-motion": "^11.18.1",
+    "lucide-react": "^0.473.0",
     "next": "15.1.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
