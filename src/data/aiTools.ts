@@ -5,19 +5,16 @@ export interface AiTool {
   description: string // 这个产品的简单描述
   // 产品作者
   // 使用的方式，是浏览器中使用还是VSCode扩展还是编辑器
-  howToUseType:
-  | 'Browser-based'
-  | 'Extension'
-  | 'Editor'
-  | 'Terminal'
+  howToUseType: 'Browser-based' | 'Extension' | 'Editor' | 'Terminal'
 }
 
 export const aiTools: AiTool[] = [
+  // 编辑器类 (Editor)
   {
     logoComponent: 'Cursor',
     whatsTheName: 'Cursor',
     urlLink: 'https://www.cursor.com/',
-    description: 'The most powerful AI native code editor in the universe.',
+    description: 'The most powerful AI native code editor in the universe',
     howToUseType: 'Editor'
   },
   {
@@ -26,6 +23,41 @@ export const aiTools: AiTool[] = [
     description: 'Was launched by Codeium on November 14, 2024',
     howToUseType: 'Editor'
   },
+  {
+    whatsTheName: 'PearAI',
+    urlLink: 'https://trypear.ai/',
+    description: 'Aider + Supermaven + MemO + Continue + Perplexity',
+    howToUseType: 'Editor'
+  },
+  {
+    whatsTheName: 'Void',
+    urlLink: 'https://voideditor.com/',
+    description: 'Void is an open source Cursor alternative.',
+    howToUseType: 'Editor'
+  },
+ 
+
+  {
+    whatsTheName: 'Aide',
+    urlLink: 'https://aide.dev/',
+    description:
+      'The open-source AI-native IDE. by CodeStory.ai',
+    howToUseType: 'Editor'
+  },
+  {
+    whatsTheName: 'Zed',
+    urlLink: 'https://zed.dev/',
+    description: `The editor for what's next. Windows not yet available`,
+    howToUseType: 'Editor'
+  },
+  {
+    whatsTheName: 'Trae',
+    urlLink: 'https://www.trae.ai/',
+    description: 'The beta test for Trea begins on January 20, 2025. by ByteDance',
+    howToUseType: 'Editor'
+  },
+ 
+  // 基于浏览器 (Browser-based)
   {
     logoComponent: 'V0',
     whatsTheName: 'v0',
@@ -40,6 +72,7 @@ export const aiTools: AiTool[] = [
     description: 'Bolt是一个基于浏览器的AI工具',
     howToUseType: 'Browser-based'
   },
+  // 扩展类 (Extension)
   {
     whatsTheName: 'Cline or Roo-Cline',
     urlLink: 'https://github.com/cline/cline',
@@ -64,16 +97,12 @@ export const aiTools: AiTool[] = [
     description: 'Lovable是一个基于浏览器的AI工具',
     howToUseType: 'Browser-based'
   },
-  {
-    whatsTheName: 'PearAI',
-    urlLink: 'https://trypear.ai/',
-    description: 'PearAI是一个编辑器AI工具',
-    howToUseType: 'Editor'
-  },
+
+  // 终端类 (Terminal)
   {
     whatsTheName: 'Aider',
     urlLink: 'https://aider.chat/',
-    description: 'Aider是一个终端AI工具',
+    description: 'Aider in your terminal',
     howToUseType: 'Terminal'
   },
   {
@@ -96,38 +125,31 @@ export const aiTools: AiTool[] = [
       'Tabnine’s AI code assistant helps you ship higher quality software faster with AI tools for code generation, testing, and code review custom-fit to each engineering team.',
     howToUseType: 'Extension'
   },
-  {
-    whatsTheName: 'Void',
-    urlLink: 'https://voideditor.com/',
-    description:
-      'Void is an open source Cursor alternative. Write code with the best AI tools, use any model, and retain full control over your data.',
-    howToUseType: 'Editor'
-  },
+
   {
     whatsTheName: 'sitebrew.ai',
     urlLink: 'https://www.sitebrew.ai/',
     description: 'Generate a site and share it with the world, in seconds',
     howToUseType: 'Browser-based'
   },
-  {
-    whatsTheName: 'Aide',
-    urlLink: 'https://aide.dev/',
-    description:
-      'Powered by the state-of-the-art agentic framework on swebench-verified',
-    howToUseType: 'Editor'
-  },
+
   {
     whatsTheName: 'MarsCode',
     urlLink: 'https://www.marscode.com/',
-    description:
-      '字节系出品',
+    description: 'bytedance',
     howToUseType: 'Browser-based'
   },
   {
     whatsTheName: 'Warp',
     urlLink: 'https://www.warp.dev/',
-    description:
-      'AI Terminal',
+    description: 'AI Terminal',
     howToUseType: 'Terminal'
+  },
+
+  {
+    whatsTheName: 'Replit',
+    urlLink: 'https://replit.com/',
+    description: 'Idea to app, fast.',
+    howToUseType: 'Browser-based'
   }
 ]
