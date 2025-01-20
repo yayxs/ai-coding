@@ -2,8 +2,9 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import type { ReactNode } from 'react'
-import { BackgroundBeamsWithCollision } from '@/components/ui/background-beams-with-collision'
+import { BackgroundBeamsWithCollision } from '@/components/ui/BeamsWithCollision'
 import { Header } from '@/components/ui/header'
+import { ScrollToTop } from '@/components/ui/ScrollToTop'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -26,6 +27,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             {children}
           </div>
         </main>
+        <ScrollToTop />
       </body>
     </html>
   )
