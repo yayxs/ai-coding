@@ -3,7 +3,7 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import type { ReactNode } from 'react'
 import { BackgroundBeamsWithCollision } from '@/components/ui/BeamsWithCollision'
-import { Header } from '@/components/ui/Header'
+import { Header } from '@/components/ui/header'
 import { ScrollToTop } from '@/components/ui/ScrollToTop'
 import { Providers } from '@/components/Providers'
 

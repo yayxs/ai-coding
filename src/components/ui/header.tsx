@@ -1,8 +1,8 @@
 'use client'
 
 import Link from 'next/link'
-import { Button } from './Button'
-import { Github} from 'lucide-react'
+import { Button } from './button'
+import { Github } from 'lucide-react'
 import { ThemeToggle } from './ThemeToggle'
 
 export function Header() {

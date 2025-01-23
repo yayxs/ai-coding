@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { Button } from './Button'
+import { Button } from './button'
 import { ArrowUp } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
