@@ -27,22 +27,10 @@ export const aiTools: AiTool[] = [
     howToUseType: 'Editor'
   },
   {
-    whatsTheName: 'PearAI',
-    urlLink: 'https://trypear.ai/',
-    description: 'Aider + Supermaven + MemO + Continue + Perplexity',
-    howToUseType: 'Editor'
-  },
-  {
-    whatsTheName: 'Void',
-    urlLink: 'https://voideditor.com/',
-    description: 'Void is an open source Cursor alternative.',
-    howToUseType: 'Editor'
-  },
-  {
-    whatsTheName: 'Aide',
-    urlLink: 'https://aide.dev/',
-    description: 'The open-source AI-native IDE. by CodeStory.ai',
-    company: 'CodeStory.ai',
+    whatsTheName: 'Trae',
+    urlLink: 'https://www.trae.ai/',
+    description: 'The beta test for Trea begins on January 20, 2025',
+    company: 'ByteDance',
     howToUseType: 'Editor'
   },
   {
@@ -53,12 +41,26 @@ export const aiTools: AiTool[] = [
     howToUseType: 'Editor'
   },
   {
-    whatsTheName: 'Trae',
-    urlLink: 'https://www.trae.ai/',
-    description: 'The beta test for Trea begins on January 20, 2025. by ByteDance',
-    company: 'ByteDance',
+    whatsTheName: 'PearAI',
+    urlLink: 'https://trypear.ai/',
+    description: 'Aider + Supermaven + MemO + Continue + Perplexity',
     howToUseType: 'Editor'
   },
+  {
+    whatsTheName: 'Void',
+    urlLink: 'https://voideditor.com/',
+    description: 'Void is an open source Cursor alternative',
+    howToUseType: 'Editor'
+  },
+  {
+    whatsTheName: 'Aide',
+    urlLink: 'https://aide.dev/',
+    description: 'The open-source AI-native IDE.',
+    company: 'CodeStory.ai',
+    howToUseType: 'Editor'
+  },
+ 
+  
   // 扩展类 (Extension)
   {
     whatsTheName: 'Cline or Roo-Cline',
@@ -106,7 +108,7 @@ export const aiTools: AiTool[] = [
     whatsTheName: 'Tabnine',
     urlLink: 'https://www.tabnine.com/',
     description: 'There are some autocompletions',
-    company: '',
+    company: 'Codota',
     howToUseType: 'Extension'
   },
   {
@@ -114,6 +116,27 @@ export const aiTools: AiTool[] = [
     urlLink: 'https://comate.baidu.com/zh',
     description: 'Your AI Coding Mate',
     company: 'Baidu',
+    howToUseType: 'Extension'
+  },
+  {
+    whatsTheName: 'Amazon Q',
+    urlLink: 'https://aws.amazon.com/q/developer/',
+    description: 'Formerly CodeWhisperer',
+    company: 'Amazon',
+    howToUseType: 'Extension'
+  },
+  {
+    whatsTheName: 'CodeGeeX',
+    urlLink: 'https://codegeex.cn/',
+    description: 'Zhipu + ',
+    company: 'ZhipuAI',
+    howToUseType: 'Extension'
+  },
+  {
+    whatsTheName: '腾讯云 AI 代码助手',
+    urlLink: 'https://copilot.tencent.com/',
+    description: '基于混元大模型 ',
+    company: 'Tencent',
     howToUseType: 'Extension'
   },
   // 基于浏览器 (Browser-based)
@@ -129,7 +152,7 @@ export const aiTools: AiTool[] = [
     whatsTheName: 'Bolt',
     urlLink: 'https://bolt.new/',
     description: 'bolt.diy or bolt.new',
-    company: '',
+    company: 'StackBlitz',
     howToUseType: 'Browser-based'
   },
   {
@@ -172,7 +195,7 @@ export const aiTools: AiTool[] = [
   {
     whatsTheName: 'Aider',
     urlLink: 'https://aider.chat/',
-    description: 'Aider in your terminal',
+    description: 'There is AI ability in the terminal',
     company: '',
     howToUseType: 'Terminal'
   },
