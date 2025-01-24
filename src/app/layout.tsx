@@ -20,19 +20,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="en" className={inter.className} suppressHydrationWarning>
       <head>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              try {
-                let isDark = localStorage.theme === 'dark' || 
-                  (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
-                document.documentElement.classList.toggle('dark', isDark)
-              } catch (e) {}
-            `
-          }}
-        />
       </head>
-      <body className='min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300'>
+      <body className='min-h-screen bg-background text-foreground transition-colors duration-300'>
         <Providers>
           <Header />
           <main className='relative'>

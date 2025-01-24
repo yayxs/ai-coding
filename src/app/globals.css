@@ -1,3 +1,20 @@
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --primary: 221.2 83.2% 53.3%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+  }
+
+  body {
+    @apply bg-background text-foreground transition-theme duration-200;
+  }
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
