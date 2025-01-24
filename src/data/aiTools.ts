@@ -29,7 +29,7 @@ export const aiTools: AiTool[] = [
   {
     whatsTheName: 'Trae',
     urlLink: 'https://www.trae.ai/',
-    description: 'The beta test for Trea begins on January 20, 2025',
+    description: '2.0 + Native IDE',
     company: 'ByteDance',
     howToUseType: 'Editor'
   },
@@ -55,7 +55,7 @@ export const aiTools: AiTool[] = [
   {
     whatsTheName: 'Aide',
     urlLink: 'https://aide.dev/',
-    description: 'The open-source AI-native IDE.',
+    description: 'The open-source AI-native IDE',
     company: 'CodeStory.ai',
     howToUseType: 'Editor'
   },
@@ -72,7 +72,7 @@ export const aiTools: AiTool[] = [
   {
     whatsTheName: 'GitHub Copilot',
     urlLink: 'https://github.com/features/copilot',
-    description: 'Built into Visual Studio Code. by GitHub',
+    description: 'Built into Visual Studio Code',
     company: 'GitHub (Microsoft)',
     howToUseType: 'Extension'
   },
@@ -144,7 +144,7 @@ export const aiTools: AiTool[] = [
     logoComponent: 'V0',
     whatsTheName: 'v0',
     urlLink: 'https://v0.dev/',
-    description: 'v0 is your always-on pair-programmer.',
+    description: 'v0 is your always-on pair-programmer',
     company: 'Vercel',
     howToUseType: 'Browser-based'
   },
@@ -173,7 +173,7 @@ export const aiTools: AiTool[] = [
   {
     whatsTheName: 'MarsCode',
     urlLink: 'https://www.marscode.com/',
-    description: 'bytedance',
+    description: '1.0 + Cloud IDE',
     company: 'ByteDance',
     howToUseType: 'Browser-based'
   },

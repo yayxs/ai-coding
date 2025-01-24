@@ -1,82 +1,85 @@
-# AI Coding Tools Comparison
+# AI Coding Tools Showcase
 
-一个用于比较和展示主流AI编程工具的现代化Web应用。
+🌐 [English](README.md) | [中文](README.zh-CN.md)
 
-## 项目简介
+A modern web application for showcasing and categorizing mainstream AI coding tools.
 
-本项目旨在帮助开发者了解和比较各种AI编程工具的特点、平台支持情况和使用方式。通过直观的界面展示，让用户能够快速找到最适合自己的AI编程助手。
+## Project Overview
 
-## 功能特点
+This project helps developers discover and understand various AI programming tools through structured categorization and detailed feature displays. The intuitive interface provides clear overviews of different tools' capabilities and platform support.
 
-- 🎯 展示主流AI编程工具的详细信息
-- 🔍 按使用方式分类（浏览器/编辑器/扩展/终端）
-- 💫 现代化的UI设计和流畅的用户体验
-- 🌓 支持深色模式
-- ⚡ 基于Next.js构建，性能优异
+## Key Features
 
-## 技术栈
+- 🎯 Curated collection of mainstream AI coding tools
+- 🔍 Organized by usage types (Browser/Editor/Extension/Terminal)
+- 💫 Modern UI design with smooth user experience
+- 🌓 Dark mode support
+- ⚡ Built with Next.js for excellent performance
 
-- **框架**: Next.js 15.1.4
-- **UI库**: React 19
-- **样式**: TailwindCSS
-- **动画**: Framer Motion
-- **类型检查**: TypeScript
-- **UI组件**: Radix UI
+## Tech Stack
 
-## 快速开始
+- **Framework**: Next.js 15.1.4
+- **UI Library**: React 19
+- **Styling**: TailwindCSS
+- **Animation**: Framer Motion
+- **Type Checking**: TypeScript
+- **UI Components**: Radix UI
 
-### 环境要求
+## Getting Started
 
-- Node.js 18.0.0 或更高版本
-- pnpm 8.0.0 或更高版本
+### Prerequisites
 
-### 安装
+- Node.js 18.0.0 or higher
+- pnpm 8.0.0 or higher
+
+### Installation
 
 ```bash
-# 克隆项目
+# Clone repository
 git clone https://github.com/yayxs/ai-coding.git
 
-# 进入项目目录
+# Enter project directory
 cd ai-coding
 
-# 安装依赖
+# Install dependencies
 pnpm install
 ```
 
-### 开发
+### Development
 
 ```bash
-# 启动开发服务器
+# Start development server
 pnpm dev
 ```
 
-访问 http://localhost:3000 查看应用。
+Visit http://localhost:3000 to view the application.
 
-### 构建
+### Build
 
 ```bash
-# 构建生产版本
+# Build for production
 pnpm build
 
-# 启动生产服务器
+# Start production server
 pnpm start
 ```
 
-## 项目结构
+## Project Structure
 
 ```
 src/
-  ├── app/          # Next.js 应用页面
-  ├── components/   # React 组件
-  ├── data/         # 数据文件
-  ├── lib/          # 工具函数
-  └── types/        # TypeScript 类型定义
+  ├── app/          # Next.js app pages
+  ├── components/   # React components
+  ├── data/         # Data files
+  ├── lib/          # Utility functions
+  └── types/        # TypeScript type definitions
 ```
 
-## 贡献
+## Contributing
 
-欢迎提交 Issue 和 Pull Request！
+Welcome to submit issues and pull requests! For Chinese contributors, please see [中文文档](README.zh-CN.md).
 
-## 许可证
+## License
 
-[MIT](LICENSE)
+[MIT](LICENSE)  
+Open source under MIT license.
