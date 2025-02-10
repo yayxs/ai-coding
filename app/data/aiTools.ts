@@ -63,9 +63,9 @@ export const aiTools: AiTool[] = [
   
   // 扩展类 (Extension)
   {
-    whatsTheName: 'Cline or Roo-Cline',
-    urlLink: 'https://github.com/cline/cline',
-    description: 'Openrouter token calls number one. + DeepSeek',
+    whatsTheName: 'Cline Roo-Cline Roo Code',
+    urlLink: 'https://cline.bot/',
+    description: 'DeepSeek R1 in Visual Studio Code with Cline + OpenRouter',
     company: '',
     howToUseType: 'Extension'
   },
@@ -210,6 +210,13 @@ export const aiTools: AiTool[] = [
     whatsTheName: 'Wave',
     urlLink: 'https://www.waveterm.dev/',
     description: 'Stop Context Switching by Bringing Context Into Your Terminal',
+    company: '',
+    howToUseType: 'Terminal'
+  },
+  {
+    whatsTheName: 'Tabby',
+    urlLink: 'https://tabby.sh/',
+    description: 'A terminal for the modern age',
     company: '',
     howToUseType: 'Terminal'
   },

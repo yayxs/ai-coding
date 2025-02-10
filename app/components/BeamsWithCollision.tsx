@@ -175,6 +175,7 @@ const CollisionMechanism = React.forwardRef<
 >(
   (
     { parentRef, containerRef, beamOptions = {} }: CollisionMechanismProps,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     ref
   ) => {
     const beamRef = useRef<HTMLDivElement>(null)

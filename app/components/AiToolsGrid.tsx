@@ -31,6 +31,11 @@ const categories = [
     description: ''
   },
   {
+    type: 'Git' as const,
+    title: 'Git',
+    description: ''
+  },
+  {
     type: 'Other' as const,
     title: 'Other',
     description: ''
