@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { Button } from './button'
+import { Button } from './Button'
 import { Github } from 'lucide-react'
 import { ThemeToggle } from './ThemeToggle'
 

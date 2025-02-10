@@ -1,5 +1,5 @@
-import { AiToolsGrid } from '@/components/AiToolsGrid'
-import { aiTools } from '@/data/aiTools'
+import { AiToolsGrid } from './components/AiToolsGrid'
+import { aiTools } from './data/aiTools'
 
 export default function Home() {
   return (

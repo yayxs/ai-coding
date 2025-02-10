@@ -6,7 +6,7 @@ export interface AiTool {
   company?: string // 开发这个产品的公司
   // 产品作者
   // 使用的方式，是浏览器中使用还是VSCode扩展还是编辑器
-  howToUseType: 'Browser-based' | 'Extension' | 'Editor' | 'Terminal' | 'AI software engineer' | 'Other'
+  howToUseType: 'Browser-based' | 'Extension' | 'Editor' | 'Terminal' | 'AI software engineer' | 'Other' | 'Git'
 }
 
 export const aiTools: AiTool[] = [
@@ -221,6 +221,14 @@ export const aiTools: AiTool[] = [
     company: '',
     howToUseType: 'AI software engineer'
   },
+  // Git
+  {
+    whatsTheName: 'Generate Commit Messages with AI',
+    urlLink: 'https://medium.com/@yanirmanor/how-to-generate-commit-messages-with-ai-in-visual-studio-code-4b7367bbafe3',
+    description: 'Visual Studio Code + Copilot',
+    company: '',
+    howToUseType: 'Git'
+  },
   // 其他 (Other)
   {
     whatsTheName: 'CodeFuse',
@@ -229,4 +237,5 @@ export const aiTools: AiTool[] = [
     company: 'Ant Group',
     howToUseType: 'Other'
   }
+
 ]

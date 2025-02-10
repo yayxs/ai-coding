@@ -1,4 +1,4 @@
-import { AiTool } from '@/data/aiTools'
+import { AiTool } from '../data/aiTools'
 
 interface AiToolsGridProps {
   tools: AiTool[]

@@ -1,9 +1,9 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { Button } from './button'
+import { Button } from './Button'
 import { ArrowUp } from 'lucide-react'
-import { cn } from '@/lib/utils'
+import { cn } from '../lib/utils'
 
 export const ScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(false)
@@ -39,4 +39,4 @@ export const ScrollToTop = () => {
       <ArrowUp className="h-4 w-4 text-gray-800 dark:text-gray-200" />
     </Button>
   )
-} 
+}

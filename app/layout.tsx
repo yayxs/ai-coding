@@ -2,10 +2,10 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import type { ReactNode } from 'react'
-import { BackgroundBeamsWithCollision } from '@/components/ui/BeamsWithCollision'
-import { Header } from '@/components/ui/header'
-import { ScrollToTop } from '@/components/ui/ScrollToTop'
-import { Providers } from '@/components/Providers'
+import { BackgroundBeamsWithCollision } from './components/BeamsWithCollision'
+import { Header } from './components/Header'
+import { ScrollToTop } from './components/ScrollToTop'
+import { Providers } from './components/Providers'
 
 const inter = Inter({ subsets: ['latin'] })
 
