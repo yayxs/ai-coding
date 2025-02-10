@@ -2,16 +2,12 @@
 
 🌐 [English](README.md) | [中文](README.zh-CN.md)
 
-A modern web application for showcasing and categorizing mainstream AI coding tools.
-
-## Project Overview
-
-This project helps developers discover and understand various AI programming tools through structured categorization and detailed feature displays. The intuitive interface provides clear overviews of different tools' capabilities and platform support.
+With the evolution of **AI Programming** (or `AI Coding`), there are increasingly more and better products available, such as `Cursor` and others. To better understand what tools, extensions, native editors, cloud editors, terminals exist... We developed a modern web application for categorizing and showcasing mainstream AI programming tools.
 
 ## Key Features
 
 - 🎯 Curated collection of mainstream AI coding tools
-- 🔍 Organized by usage types (Browser/Editor/Extension/Terminal)
+- 🔍 Categorized by usage types (Browser/Editor/Extension/Terminal)
 - 💫 Modern UI design with smooth user experience
 - 🌓 Dark mode support
 - ⚡ Built with Next.js for excellent performance
@@ -27,7 +23,7 @@ This project helps developers discover and understand various AI programming too
 
 ## Getting Started
 
-### Prerequisites
+### Environment Requirements
 
 - Node.js 18.0.0 or higher
 - pnpm 8.0.0 or higher
@@ -64,20 +60,19 @@ pnpm build
 pnpm start
 ```
 
-## Project Structure
+## Directory Structure
 
 ```
-src/
-  ├── app/          # Next.js app pages
+app/
   ├── components/   # React components
   ├── data/         # Data files
   ├── lib/          # Utility functions
   └── types/        # TypeScript type definitions
 ```
 
-## Contributing
+## Contribution Guidelines
 
-Welcome to submit issues and pull requests! For Chinese contributors, please see [中文文档](README.zh-CN.md).
+We welcome contributions through issues and pull requests! For Chinese contributors, please refer to [中文文档](README.zh-CN.md) for localized contribution guidelines.
 
 ## License
 
