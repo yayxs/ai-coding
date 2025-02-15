@@ -15,18 +15,7 @@ export function Header() {
           </span>
         </div>
         <div className="flex items-center space-x-4">
-          <Button variant="outline" size="sm" asChild>
-            <Link
-              href="https://sponsors-10k.netlify.app/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-1.5"
-              aria-label="赞助者列表"
-            >
-              <Heart className="h-4 w-4 text-pink-500" />
-              <span className="hidden md:inline-block">Sponsors</span>
-            </Link>
-          </Button>
+          
           <ThemeToggle />
           <Button variant="ghost" size="icon" asChild>
             <Link
