@@ -2,6 +2,13 @@
 
 🌐 [English](README.md) | [中文](README.zh-CN.md)
 
+请注意：
+
+- [https://www.shikei.me/](https://www.shikei.me/)  这是**10k的主站**，感兴趣可以看一下
+- 如果你是中国大陆用户可以这么访问：--> [https://ai-coding.netlify.app/](https://ai-coding.netlify.app/) （by netlify）
+- 当然你也可以这么访问 --> [https://aicoding.vercel.app/](https://aicoding.vercel.app/)
+
+
 随着时间推移，在**AI编程**，或者称为 `AI Coding`方面出现了越来越多、越来越好用的产品。比如`Cursor`等等。为了先搞明白都是有哪些工具、扩展、或者原生编辑器、云编辑器、终端……。我们开发一个用于分类展示主流AI编程工具的现代化Web应用。
 
 ## 功能特点
