@@ -42,6 +42,15 @@ const categories = [
   }
 ]
 
+// 添加分级颜色映射
+const gradingColors: Record<string, { bg: string; text: string }> = {
+  L1: { bg: 'bg-blue-100 dark:bg-blue-900/30', text: 'text-blue-700 dark:text-blue-300' },
+  L2: { bg: 'bg-green-100 dark:bg-green-900/30', text: 'text-green-700 dark:text-green-300' },
+  L3: { bg: 'bg-yellow-100 dark:bg-yellow-900/30', text: 'text-yellow-700 dark:text-yellow-300' },
+  L4: { bg: 'bg-orange-100 dark:bg-orange-900/30', text: 'text-orange-700 dark:text-orange-300' },
+  L5: { bg: 'bg-red-100 dark:bg-red-900/30', text: 'text-red-700 dark:text-red-300' },
+}
+
 export function AiToolsGrid({ tools }: AiToolsGridProps) {
   return (
     <div className='w-full max-w-7xl mx-auto space-y-12'>
@@ -73,25 +82,38 @@ export function AiToolsGrid({ tools }: AiToolsGridProps) {
                     transition-all duration-200 ease-in-out 
                     hover:-translate-y-1 hover:bg-gray-50 dark:hover:bg-gray-700'
                 >
-                  <div className='flex flex-col items-center space-y-4 mt-4'>
-                    <h3 className='text-lg font-medium text-gray-900 dark:text-gray-100
-                      group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-200
-                      text-center max-w-[calc(100%-5rem)]'>
-                      {tool.whatsTheName}
-                    </h3>
-                    <p className='text-sm text-gray-600 dark:text-gray-300 text-center'>
+                  <div className='flex flex-col items-start space-y-3'>
+                    {/* 标题和分级标签容器 */}
+                    <div className='w-full flex items-start justify-between gap-2'>
+                      <h3 className='text-lg font-medium text-gray-900 dark:text-gray-100
+                        group-hover:text-blue-600 dark:group-hover:text-blue-400 
+                        transition-colors duration-200'>
+                        {tool.whatsTheName}
+                      </h3>
+                      <div className='flex items-center gap-2 flex-shrink-0'>
+                        {tool.grading && (
+                          <span className={`inline-flex items-center px-2 py-0.5 text-xs font-medium rounded-full
+                            ${gradingColors[tool.grading].bg} 
+                            ${gradingColors[tool.grading].text}
+                            whitespace-nowrap`}>
+                            {tool.grading}
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                    
+                    {/* 描述文本 */}
+                    <p className='text-sm text-gray-600 dark:text-gray-300'>
                       {tool.description}
                     </p>
+                    
+                    {/* 公司标签 */}
+                    {tool.company && (
+                      <div className='mt-auto pt-2 text-xs font-medium text-gray-500 dark:text-gray-400'>
+                        {tool.company}
+                      </div>
+                    )}
                   </div>
-                  {tool.company && (
-                    <div className='absolute top-3 right-3 px-2 py-1 
-                      text-xs font-medium text-gray-500 dark:text-gray-400 
-                      bg-gray-50 dark:bg-gray-700
-                      rounded-full border border-gray-200 dark:border-gray-600
-                      group-hover:bg-white dark:group-hover:bg-gray-600 transition-colors duration-200'>
-                      {tool.company}
-                    </div>
-                  )}
                 </a>
               ))}
             </div>

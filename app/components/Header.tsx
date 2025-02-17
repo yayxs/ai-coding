@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { Button } from './Button';
-import { Github, Heart } from 'lucide-react';
+import { Github } from 'lucide-react';
 import { ThemeToggle } from './ThemeToggle';
 
 export function Header() {

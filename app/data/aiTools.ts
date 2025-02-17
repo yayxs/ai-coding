@@ -14,6 +14,8 @@ export interface AiTool {
     | 'AI software engineer'
     | 'Other'
     | 'Git';
+  // 分级
+  grading?: 'L1' | 'L2' | 'L3' | 'L4' | 'L5';
 }
 
 export const aiTools: AiTool[] = [
@@ -24,6 +26,7 @@ export const aiTools: AiTool[] = [
     description: 'The most powerful AI native code editor in the universe',
     company: 'Anysphere',
     howToUseType: 'Editor',
+    grading: 'L2',
   },
   {
     whatsTheName: 'Windsurf',
@@ -31,13 +34,15 @@ export const aiTools: AiTool[] = [
     description: 'Was launched by Codeium on November 14, 2024',
     company: 'Codeium',
     howToUseType: 'Editor',
+    grading: 'L2',
   },
   {
     whatsTheName: 'Trae',
     urlLink: 'https://www.trae.ai/',
-    description: '2.0 + Native IDE',
+    description: 'Mac and Windows are both supported',
     company: 'ByteDance',
     howToUseType: 'Editor',
+    grading: 'L2',
   },
   {
     whatsTheName: 'Zed',
@@ -51,6 +56,7 @@ export const aiTools: AiTool[] = [
     urlLink: 'https://trypear.ai/',
     description: 'Aider + Supermaven + MemO + Continue + Perplexity',
     howToUseType: 'Editor',
+    grading: 'L2',
   },
   {
     whatsTheName: 'Void',
@@ -73,6 +79,7 @@ export const aiTools: AiTool[] = [
     description: 'DeepSeek R1 in Visual Studio Code with Cline + OpenRouter',
     company: '',
     howToUseType: 'Extension',
+    grading: 'L2',
   },
   {
     whatsTheName: 'GitHub Copilot',
@@ -87,6 +94,15 @@ export const aiTools: AiTool[] = [
     description: '+ Roo Cline + DeepSeek',
     company: '',
     howToUseType: 'Extension',
+    grading: 'L2',
+  },
+  {
+    whatsTheName: 'Codeium',
+    urlLink: 'https://codeium.com/download',
+    description: 'Codeium extension',
+    company: '',
+    howToUseType: 'Extension',
+    grading: 'L1',
   },
   {
     whatsTheName: 'tongyi lingma',
@@ -108,6 +124,7 @@ export const aiTools: AiTool[] = [
     description: 'formerly Codium',
     company: '',
     howToUseType: 'Extension',
+    grading: 'L1',
   },
   {
     whatsTheName: 'Tabnine',
@@ -209,6 +226,7 @@ export const aiTools: AiTool[] = [
     description: 'There is AI ability in the terminal',
     company: '',
     howToUseType: 'Terminal',
+    grading: 'L2',
   },
   {
     whatsTheName: 'Warp',
@@ -230,6 +248,7 @@ export const aiTools: AiTool[] = [
     description: 'A terminal for the modern age',
     company: '',
     howToUseType: 'Terminal',
+    grading: 'L1',
   },
   // AI 软件工程师 (AI software engineer)
   {
