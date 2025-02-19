@@ -16,6 +16,14 @@ export interface AiTool {
     | 'Git';
   // 分级
   grading?: 'L1' | 'L2' | 'L3' | 'L4' | 'L5';
+  outputType?: 
+    | 'DailyCoding' // 日常编码，如 Cursor、Windsurf、Trae
+    | 'WebApp' // Web应用，如 bolt、v0、lovable
+    | 'Backend' // 后端服务，如 Devv Builder
+    | 'Terminal' // 终端增强，如 Warp、Aider
+    | 'Infrastructure' // 基础设施，如 CodeFuse
+    | 'Documentation'  // 添加新的类型：项目文档
+    | 'Other';
 }
 
 export const aiTools: AiTool[] = [
@@ -27,6 +35,7 @@ export const aiTools: AiTool[] = [
     company: 'Anysphere',
     howToUseType: 'Editor',
     grading: 'L2',
+    outputType: 'DailyCoding',
   },
   {
     whatsTheName: 'Windsurf',
@@ -35,6 +44,7 @@ export const aiTools: AiTool[] = [
     company: 'Codeium',
     howToUseType: 'Editor',
     grading: 'L2',
+    outputType: 'DailyCoding',
   },
   {
     whatsTheName: 'Trae',
@@ -43,6 +53,7 @@ export const aiTools: AiTool[] = [
     company: 'ByteDance',
     howToUseType: 'Editor',
     grading: 'L2',
+    outputType: 'DailyCoding',
   },
   {
     whatsTheName: 'Zed',
@@ -169,6 +180,7 @@ export const aiTools: AiTool[] = [
     description: 'v0 is your always-on pair-programmer',
     company: 'Vercel',
     howToUseType: 'Browser-based',
+    outputType: 'WebApp',
   },
   {
     whatsTheName: 'Bolt',
@@ -176,6 +188,7 @@ export const aiTools: AiTool[] = [
     description: 'bolt.diy or bolt.new',
     company: 'StackBlitz',
     howToUseType: 'Browser-based',
+    outputType: 'WebApp',
   },
   {
     whatsTheName: 'Lovable',
@@ -183,6 +196,7 @@ export const aiTools: AiTool[] = [
     description: 'Lovable is your superhuman full stack engineer',
     company: '',
     howToUseType: 'Browser-based',
+    outputType: 'WebApp',
   },
   {
     whatsTheName: 'Devv Builder',
@@ -190,6 +204,7 @@ export const aiTools: AiTool[] = [
     description: 'You can think of it as the backend version of Bolt.new / Lovable.',
     company: '',
     howToUseType: 'Browser-based',
+    outputType: 'Backend',
   },
   {
     whatsTheName: 'sitebrew.ai',
@@ -197,6 +212,7 @@ export const aiTools: AiTool[] = [
     description: 'Generate a site and share it with the world, in seconds',
     company: '',
     howToUseType: 'Browser-based',
+    outputType: 'WebApp',
   },
   {
     whatsTheName: 'MarsCode',
@@ -219,6 +235,14 @@ export const aiTools: AiTool[] = [
     company: 'Google',
     howToUseType: 'Browser-based',
   },
+  {
+    whatsTheName: 'CodeGuide',
+    urlLink: 'https://www.codeguide.dev/',
+    description: 'AI-powered documentation generator for your codebase',
+    company: '',
+    howToUseType: 'Browser-based',
+    outputType: 'Documentation',  // 使用新的类型
+  },
   // 终端类 (Terminal)
   {
     whatsTheName: 'Aider',
@@ -227,6 +251,7 @@ export const aiTools: AiTool[] = [
     company: '',
     howToUseType: 'Terminal',
     grading: 'L2',
+    outputType: 'Terminal',
   },
   {
     whatsTheName: 'Warp',
@@ -234,6 +259,7 @@ export const aiTools: AiTool[] = [
     description: 'AI Terminal',
     company: '',
     howToUseType: 'Terminal',
+    outputType: 'Terminal',
   },
   {
     whatsTheName: 'Wave',
@@ -241,6 +267,7 @@ export const aiTools: AiTool[] = [
     description: 'Stop Context Switching by Bringing Context Into Your Terminal',
     company: '',
     howToUseType: 'Terminal',
+    outputType: 'Terminal',
   },
   {
     whatsTheName: 'Tabby',
@@ -249,6 +276,7 @@ export const aiTools: AiTool[] = [
     company: '',
     howToUseType: 'Terminal',
     grading: 'L1',
+    outputType: 'Terminal',
   },
   // AI 软件工程师 (AI software engineer)
   {
