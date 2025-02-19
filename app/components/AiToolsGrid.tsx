@@ -115,6 +115,19 @@ export function AiToolsGrid({ tools }: AiToolsGridProps) {
                     transition-all duration-200 ease-in-out 
                     hover:-translate-y-1 hover:bg-gray-50 dark:hover:bg-gray-700'
                 >
+                  <script type="application/ld+json">
+                    {JSON.stringify({
+                      "@context": "https://schema.org",
+                      "@type": "SoftwareApplication",
+                      "name": tool.whatsTheName,
+                      "description": tool.description,
+                      "applicationCategory": "DeveloperApplication",
+                      "offers": {
+                        "@type": "Offer",
+                        "availability": "https://schema.org/OnlineOnly"
+                      }
+                    })}
+                  </script>
                   <div className='flex flex-col items-start space-y-3'>
                     {/* 标题和分级标签容器 */}
                     <div className='w-full flex items-start justify-between gap-2'>
