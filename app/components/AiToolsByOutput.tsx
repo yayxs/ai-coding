@@ -38,6 +38,18 @@ const outputCategories = [
     icon: '🏗️',
   },
   {
+    type: 'MobileApp' as const,
+    title: '移动 App',
+    description: 'Build any mobile app, fast.',
+    icon: '📱',
+  },
+  {
+    type: 'FrontEndComponent' as const,
+    title: '生成前端组件',
+    description: '从屏幕截图自动生成前端组件代码',
+    icon: '🎨',
+  },
+  {
     type: 'Other' as const,
     title: '其他工具',
     description: '其他类型的AI编程工具',
@@ -51,13 +63,46 @@ const outputCategories = [
   },
 ]
 
-// 复用现有的动画配置
+// 修改前
+// const container = {
+//   hidden: { opacity: 0 },
+//   show: {
+//     opacity: 1,
+//     transition: {
+//       staggerChildren: 0.1
+//     }
+//   }
+// }
+
+// const item = {
+//   hidden: { 
+//     opacity: 0, 
+//     y: 20,
+//     scale: 0.95
+//   },
+//   show: { 
+//     opacity: 1, 
+//     y: 0,
+//     scale: 1,
+//     transition: {
+//       type: "spring",
+//       stiffness: 100,
+//       damping: 15
+//     }
+//   }
+// }
+
+//
+// 修改后
 const container = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.1
+      staggerChildren: 0.05,   // 减小间隔
+      delayChildren: 0.1,      // 添加轻微延迟
+      duration: 0.3,           // 控制整体动画时长
+      ease: "easeOut"          // 平滑缓动
     }
   }
 }
@@ -65,8 +110,8 @@ const container = {
 const item = {
   hidden: { 
     opacity: 0, 
-    y: 20,
-    scale: 0.95
+    y: 10,                     // 减小位移距离
+    scale: 0.98                // 减小缩放比例
   },
   show: { 
     opacity: 1, 
@@ -74,8 +119,10 @@ const item = {
     scale: 1,
     transition: {
       type: "spring",
-      stiffness: 100,
-      damping: 15
+      stiffness: 70,           // 降低刚度
+      damping: 25,             // 增加阻尼
+      mass: 0.5,               // 减小质量
+      duration: 0.4            // 控制单个项目动画时长
     }
   }
 }
@@ -103,7 +150,12 @@ export function AiToolsByOutput({ tools }: AiToolsByOutputProps) {
               variants={container}
               initial="hidden"
               whileInView="show"
-              viewport={{ once: true, margin: "-100px" }}
+              layout                      // 添加 layout 属性
+              viewport={{ 
+                once: true, 
+                margin: "-50px",         // 调整视口边距
+                amount: 0.3              // 当元素出现 30% 时触发动画
+              }}
               className='grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'
             >
               {/* 复用现有的工具卡片样式 */}

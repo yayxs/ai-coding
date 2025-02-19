@@ -23,6 +23,8 @@ export interface AiTool {
     | 'Terminal' // 终端增强，如 Warp、Aider
     | 'Infrastructure' // 基础设施，如 CodeFuse
     | 'Documentation'  // 添加新的类型：项目文档
+    | 'MobileApp'        // 新增：移动 App
+    | 'FrontEndComponent' // 新增：生成前端组件
     | 'Other';
 }
 
@@ -302,5 +304,23 @@ export const aiTools: AiTool[] = [
     description: 'Make R&D Simpler',
     company: 'Ant Group',
     howToUseType: 'Other',
+  },
+  // 移动 App
+  {
+    whatsTheName: 'Rork',
+    urlLink: 'https://rork.app/',
+    description: 'Build any mobile app, fast.',
+    company: '',
+    howToUseType: 'Browser-based', // 可根据实际使用场景调整
+    outputType: 'MobileApp',
+  },
+  // 新增：生成前端组件的工具
+  {
+    whatsTheName: 'Screenshot to Code',
+    urlLink: 'https://screenshottocode.com/',
+    description: '从屏幕截图生成前端组件代码',
+    company: '',
+    howToUseType: 'Browser-based',
+    outputType: 'FrontEndComponent',
   },
 ];

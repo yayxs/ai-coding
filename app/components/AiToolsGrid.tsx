@@ -49,7 +49,10 @@ const container = {
   show: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.1
+      staggerChildren: 0.05,
+      delayChildren: 0.1,
+      duration: 0.3,
+      ease: "easeOut"
     }
   }
 }
@@ -57,8 +60,8 @@ const container = {
 const item = {
   hidden: { 
     opacity: 0, 
-    y: 20,
-    scale: 0.95
+    y: 10,
+    scale: 0.98
   },
   show: { 
     opacity: 1, 
@@ -66,8 +69,10 @@ const item = {
     scale: 1,
     transition: {
       type: "spring",
-      stiffness: 100,
-      damping: 15
+      stiffness: 70,
+      damping: 25,
+      mass: 0.5,
+      duration: 0.4
     }
   }
 }
