@@ -282,6 +282,15 @@ export const aiTools: AiTool[] = [
   },
   // AI 软件工程师 (AI software engineer)
   {
+    whatsTheName: 'MetaGPT',
+    urlLink: 'https://www.deepwisdom.ai/',
+    description: 'MGX - 多智能体框架，SOP标准化的AI软件工程师',
+    company: 'DeepWisdom',
+    howToUseType: 'AI software engineer',
+    grading: 'L5',
+    outputType: 'Infrastructure'
+  },
+  {
     whatsTheName: 'Devin',
     urlLink: 'https://www.cognition.ai/blog/introducing-devin',
     description: 'The first AI software engineer',
@@ -311,7 +320,15 @@ export const aiTools: AiTool[] = [
     urlLink: 'https://rork.app/',
     description: 'Build any mobile app, fast.',
     company: '',
-    howToUseType: 'Browser-based', // 可根据实际使用场景调整
+    howToUseType: 'Browser-based',
+    outputType: 'MobileApp',
+  },
+  {
+    whatsTheName: 'a0',
+    urlLink: 'https://a0.dev/',
+    description: 'Mobile apps in minutes. Backed by Y Combinator',
+    company: 'Y Combinator',
+    howToUseType: 'Browser-based',
     outputType: 'MobileApp',
   },
   // 新增：生成前端组件的工具
