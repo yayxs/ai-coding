@@ -1,11 +1,10 @@
 export interface AiTool {
-  logoComponent?: string; // 存储logo组件名称
-  whatsTheName: string; // 这个产品的名字是什么，不管是编辑器还是网站还是什么
-  urlLink: string; // 这个产品网站的链接
-  description: string; // 这个产品的简单描述
-  company?: string; // 开发这个产品的公司
-  // 产品作者
-  // 使用的方式，是浏览器中使用还是VSCode扩展还是编辑器
+  logoComponent?: string; // Component name for storing the logo
+  whatsTheName: string; // Name of the product (editor/website/etc)
+  urlLink: string; // Product website link
+  description: string; // Brief description of the product
+  company?: string; // Company that developed the product
+  // Product usage type
   howToUseType:
     | 'Browser-based'
     | 'Extension'
@@ -14,17 +13,17 @@ export interface AiTool {
     | 'AI software engineer'
     | 'Other'
     | 'Git';
-  // 分级
+  // Grading level
   grading?: 'L1' | 'L2' | 'L3' | 'L4' | 'L5';
   outputType?: 
-    | 'DailyCoding' // 日常编码，如 Cursor、Windsurf、Trae
-    | 'WebApp' // Web应用，如 bolt、v0、lovable
-    | 'Backend' // 后端服务，如 Devv Builder
-    | 'Terminal' // 终端增强，如 Warp、Aider
-    | 'Infrastructure' // 基础设施，如 CodeFuse
-    | 'Documentation'  // 添加新的类型：项目文档
-    | 'MobileApp'        // 新增：移动 App
-    | 'FrontEndComponent' // 新增：生成前端组件
+    | 'DailyCoding' // Daily coding tools like Cursor, Windsurf, Trae
+    | 'WebApp' // Web applications like bolt, v0, lovable
+    | 'Backend' // Backend services like Devv Builder
+    | 'Terminal' // Terminal enhancements like Warp, Aider
+    | 'Infrastructure' // Infrastructure tools like CodeFuse
+    | 'Documentation' // Project documentation
+    | 'MobileApp' // Mobile app development
+    | 'FrontEndComponent' // Frontend component generation
     | 'Other';
 }
 
@@ -170,7 +169,7 @@ export const aiTools: AiTool[] = [
   {
     whatsTheName: '腾讯云 AI 代码助手',
     urlLink: 'https://copilot.tencent.com/',
-    description: '基于混元大模型 ',
+    description: 'Based on Hunyuan LLM',
     company: 'Tencent',
     howToUseType: 'Extension',
   },
@@ -284,7 +283,7 @@ export const aiTools: AiTool[] = [
   {
     whatsTheName: 'MetaGPT',
     urlLink: 'https://www.deepwisdom.ai/',
-    description: 'MGX - 多智能体框架，SOP标准化的AI软件工程师',
+    description: 'MGX - Multi-agent framework, SOP standardized AI software engineer',
     company: 'DeepWisdom',
     howToUseType: 'AI software engineer',
     grading: 'L5',
@@ -335,7 +334,7 @@ export const aiTools: AiTool[] = [
   {
     whatsTheName: 'Screenshot to Code',
     urlLink: 'https://screenshottocode.com/',
-    description: '从屏幕截图生成前端组件代码',
+    description: 'Generate frontend component code from screenshots',
     company: '',
     howToUseType: 'Browser-based',
     outputType: 'FrontEndComponent',

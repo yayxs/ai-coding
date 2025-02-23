@@ -12,9 +12,9 @@ export function Header() {
         <div className="flex items-center gap-2">
           <h1 className="text-xl font-bold text-gray-800 dark:text-gray-200">
             <span className="hidden">AI Coding Tools - </span>
-            AI编程工具导航
+            AI Coding Tools Navigation
           </h1>
-          <p className="hidden">发现最新最全的AI编程工具，提升开发效率</p>
+          <p className="hidden">Discover the latest AI coding tools to boost your development efficiency</p>
         </div>
         <div className="flex items-center space-x-4">
           

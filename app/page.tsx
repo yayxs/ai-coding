@@ -8,7 +8,7 @@ import { Button } from './components/Button';
 import { Layout, Layers } from 'lucide-react';
 
 export default function Home() {
-  // 默认展示类别视图
+  // Default to category view
   const [viewMode, setViewMode] = useState<'category' | 'track'>('category');
 
   return (
@@ -20,7 +20,7 @@ export default function Home() {
           className="flex items-center gap-2"
         >
           <Layout className="w-4 h-4" />
-          按类别
+          By Category
         </Button>
         <Button 
           variant={viewMode === 'track' ? 'outline' : 'default'}
@@ -28,7 +28,7 @@ export default function Home() {
           className="flex items-center gap-2"
         >
           <Layers className="w-4 h-4" />
-          细分赛道
+          By Track
         </Button>
       </div>
       

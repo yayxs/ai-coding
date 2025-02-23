@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import { ThemeProvider } from 'next-themes'
 import './globals.css'
 import type { ReactNode } from 'react'
 import { BackgroundBeamsWithCollision } from './components/BeamsWithCollision'
@@ -10,32 +11,33 @@ import { Providers } from './components/Providers'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'AI Coding Tools - 最全AI编程工具导航 | AI代码助手 | AI编辑器',
-  description: '收录Cursor、Copilot、CodeWhisperer等热门AI编程工具，包含代码补全、重构、调试等AI编程助手，以及移动应用开发、前端组件生成等智能开发工具。发现提升编程效率的AI工具。',
+  title: 'AI Coding Tools - The Ultimate AI Programming Tools Navigation',
+  description: 'Discover the latest and most comprehensive collection of AI programming tools, including code editors, IDE plugins, and terminal tools. Help developers find and use cutting-edge AI programming tools to boost development efficiency.',
   keywords: [
-    'AI编程',
-    'AI代码助手',
-    'AI编辑器',
-    'Cursor编辑器',
-    'GitHub Copilot',
-    'AI开发工具',
-    'AI编程工具',
-    'AI代码生成',
-    '智能编程',
-    'AI编程导航',
-    'AI代码补全',
-    'AI应用开发',
-    '代码重构工具',
-    'AI调试助手',
-    'Screenshot to Code',
-    'AI前端开发',
-    'AI移动开发',
-    'Rork',
-    'CodeFuse',
-    'AI项目文档生成',
-    'Cursor',
-    'Windsurf',
-    'Trae',
+    'AI Programming', 'AI 编程',
+    'AI Code Assistant', 'AI 代码助手',
+    'AI Editor', 'AI 编辑器',
+    'Cursor Editor', 'Cursor 编辑器',
+    'GitHub Copilot', 'GitHub Copilot 代码助手',
+    'AI Development Tools', 'AI 开发工具',
+    'AI Programming Tools', 'AI 编程工具',
+    'AI Code Generation', 'AI 代码生成',
+    'Smart Programming', '智能编程',
+    'AI Programming Navigation', 'AI 编程导航',
+    'AI Code Completion', 'AI 代码补全',
+    'AI App Development', 'AI 应用开发',
+    'Code Refactoring Tools', '代码重构工具',
+    'AI Debug Assistant', 'AI 调试助手',
+    'Screenshot to Code', '截图生成代码',
+    'AI Frontend Development', 'AI 前端开发',
+    'AI Mobile Development', 'AI 移动开发',
+    'Rork', 'Rork 移动应用开发',
+    'CodeFuse', 'CodeFuse 研发平台',
+    'AI Project Documentation', 'AI 项目文档',
+    'Cursor', 'Cursor AI 编辑器',
+    'Windsurf', 'Windsurf 编辑器',
+    'Trae', 'Trae AI 助手',
+    'AI tools for improving daily coding efficiency', '提升日常编码效率的AI工具'
   ].join(', '),
   authors: [
     { name: 'yayxs', url: 'https://github.com/yayxs' }
@@ -43,12 +45,11 @@ export const metadata: Metadata = {
   creator: 'yayxs',
   openGraph: {
     type: 'website',
-    locale: 'zh_CN',
+    locale: 'en_US',
     url: 'https://aicoding.vercel.app/',
-    title: 'AI Coding Tools - 最全AI编程工具导航 | AI代码助手 | AI编辑器',
-    description: '收录最全最新AI编程工具，包括代码编辑器、IDE插件、终端工具等。帮助开发者发现并使用最新AI编程工具，提升开发效率。',
-    siteName: 'AI Coding Tools',
-    
+    title: 'AI Coding Tools - The Ultimate AI Programming Tools Navigation',
+    description: 'Discover the latest and most comprehensive collection of AI programming tools, including code editors, IDE plugins, and terminal tools. Help developers find and use cutting-edge AI programming tools to boost development efficiency.',
+    siteName: 'AI Coding Tools'
   },
   // twitter: {
   //   card: 'summary_large_image',
@@ -64,33 +65,33 @@ export const metadata: Metadata = {
       follow: true,
       'max-video-preview': -1,
       'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
-  },
- 
+      'max-snippet': -1
+    }
+  }
 }
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="zh-CN" className={inter.className} suppressHydrationWarning>
+    <html lang="en" className={inter.className} suppressHydrationWarning>
       <head>
         <link rel="canonical" href="https://aicoding.vercel.app/" />
-        <meta name="baidu-site-verification" content="你的百度验证码" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
       </head>
       <body className='min-h-screen bg-background text-foreground transition-colors duration-300'>
-        <Providers>
-          <Header />
-          <main className='relative'>
-            <BackgroundBeamsWithCollision className='fixed inset-0'>
-              <div />
-            </BackgroundBeamsWithCollision>
-            <div className='relative z-10 mx-auto max-w-7xl px-4 sm:px-4 md:px-6 lg:px-8'>
-              {children}
-            </div>
-          </main>
-          <ScrollToTop />
-        </Providers>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <Providers>
+            <Header />
+            <main className='relative'>
+              <BackgroundBeamsWithCollision className='fixed inset-0'>
+                <div />
+              </BackgroundBeamsWithCollision>
+              <div className='relative z-10 mx-auto max-w-7xl px-4 sm:px-4 md:px-6 lg:px-8'>
+                {children}
+              </div>
+            </main>
+            <ScrollToTop />
+          </Providers>
+        </ThemeProvider>
       </body>
     </html>
   )
