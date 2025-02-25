@@ -25,5 +25,11 @@ export interface ModelRelease {
       company: 'xAI',
       description: ``,
     },
+    {
+      date: '2025-02-25',
+      modelName: 'Claude 3.7 Sonnet',
+      company: 'Anthropic',
+      description: `Claude 3.7 Sonnet is the first hybrid reasoning model and our most intelligent model to date.`,
+    },
   ];
   

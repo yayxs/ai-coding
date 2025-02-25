@@ -1,6 +1,7 @@
 'use client';
 
 import { ModelRelease } from '../data/models';
+import { motion } from 'framer-motion';
 
 export default function ModelTable({ releases }: { releases: ModelRelease[] }) {
   // 按日期倒序排序，最新的在前
@@ -10,23 +11,61 @@ export default function ModelTable({ releases }: { releases: ModelRelease[] }) {
 
   return (
     <div className="overflow-x-auto">
-      <table className="min-w-full table-auto border-collapse">
+      <table className="w-full border-collapse">
         <thead>
-          <tr>
-            <th className="border px-4 py-2 bg-gray-100">date</th>
-            <th className="border px-4 py-2 bg-gray-100">modelName</th>
-            <th className="border px-4 py-2 bg-gray-100">company</th>
-            <th className="border px-4 py-2 bg-gray-100">description</th>
+          <tr className="bg-gray-50 dark:bg-gray-700/50">
+            <th className="px-6 py-3 text-left text-sm font-semibold text-gray-900 dark:text-gray-100">
+              Model Name
+            </th>
+            <th className="px-6 py-3 text-left text-sm font-semibold text-gray-900 dark:text-gray-100">
+              Company
+            </th>
+            <th className="px-6 py-3 text-left text-sm font-semibold text-gray-900 dark:text-gray-100">
+              Release Date
+            </th>
+            <th className="px-6 py-3 text-left text-sm font-semibold text-gray-900 dark:text-gray-100">
+              Description
+            </th>
+            <th className="px-6 py-3 text-left text-sm font-semibold text-gray-900 dark:text-gray-100">
+              Type
+            </th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
           {sortedReleases.map((release, index) => (
-            <tr key={index}>
-              <td className="border px-4 py-2">{release.date}</td>
-              <td className="border px-4 py-2">{release.modelName}</td>
-              <td className="border px-4 py-2">{release.company}</td>
-              <td className="border px-4 py-2">{release.description}</td>
-            </tr>
+            <motion.tr
+              key={index}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3, delay: index * 0.05 }}
+              className="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors duration-200"
+            >
+              <td className="px-6 py-4 text-sm text-gray-900 dark:text-gray-100">
+                {release.modelName}
+              </td>
+              <td className="px-6 py-4">
+                <span className="px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-300 text-sm">
+                  {release.company}
+                </span>
+              </td>
+              <td className="px-6 py-4 text-sm text-gray-600 dark:text-gray-300">
+                {release.date}
+              </td>
+              <td className="px-6 py-4 text-sm text-gray-600 dark:text-gray-300">
+                {release.description || '-'}
+              </td>
+              <td className="px-6 py-4">
+                {release.isOpenSource ? (
+                  <span className="px-3 py-1 rounded-full bg-green-50 dark:bg-green-900/30 text-green-600 dark:text-green-300 text-sm">
+                    Open Source
+                  </span>
+                ) : (
+                  <span className="px-3 py-1 rounded-full bg-gray-50 dark:bg-gray-700/50 text-gray-600 dark:text-gray-300 text-sm">
+                    Closed Source
+                  </span>
+                )}
+              </td>
+            </motion.tr>
           ))}
         </tbody>
       </table>
