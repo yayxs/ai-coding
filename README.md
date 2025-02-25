@@ -18,8 +18,8 @@ With the evolution of **AI Programming** (or `AI Coding`), there are increasingl
 
 ## Tech Stack
 
-- **Framework**: Next.js 15.1.4
-- **UI Library**: React 19
+- **Framework**: Next.js 15+
+- **UI Library**: React 19+
 - **Styling**: TailwindCSS
 - **Animation**: Framer Motion
 - **Type Checking**: TypeScript

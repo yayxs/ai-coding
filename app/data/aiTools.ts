@@ -245,6 +245,16 @@ export const aiTools: AiTool[] = [
     outputType: 'Documentation',  // 使用新的类型
   },
   // 终端类 (Terminal)
+    // 在适当位置添加 Claude Code
+  {
+    whatsTheName: 'Claude Code',
+    urlLink: 'https://docs.anthropic.com/zh-CN/docs/agents-and-tools/claude-code/overview',
+    description: 'An agentic coding tool made by Anthropic',
+    company: 'Anthropic',
+    howToUseType: 'Terminal',
+    grading: 'L4',
+    outputType: 'DailyCoding',
+  },
   {
     whatsTheName: 'Aider',
     urlLink: 'https://aider.chat/',
@@ -339,4 +349,5 @@ export const aiTools: AiTool[] = [
     howToUseType: 'Browser-based',
     outputType: 'FrontEndComponent',
   },
+
 ];
