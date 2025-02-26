@@ -13,8 +13,6 @@ export interface AiTool {
     | 'AI software engineer'
     | 'Other'
     | 'Git';
-  // Grading level
-  grading?: 'L1' | 'L2' | 'L3' | 'L4' | 'L5';
   outputType?: 
     | 'DailyCoding' // Daily coding tools like Cursor, Windsurf, Trae
     | 'WebApp' // Web applications like bolt, v0, lovable
@@ -25,6 +23,7 @@ export interface AiTool {
     | 'MobileApp' // Mobile app development
     | 'FrontEndComponent' // Frontend component generation
     | 'Other';
+  isOpenSource?: boolean;
 }
 
 export const aiTools: AiTool[] = [
@@ -32,19 +31,17 @@ export const aiTools: AiTool[] = [
     logoComponent: 'Cursor',
     whatsTheName: 'Cursor',
     urlLink: 'https://www.cursor.com/',
-    description: 'The most powerful AI native code editor in the universe',
+    description: `ChatGPT's contemporaneous product shines brightly with the launch of Anthropic's Claude 3.5 Sonnet! I have paid for it, and I believe it is the strongest AI editor in the universe right now.`,
     company: 'Anysphere',
     howToUseType: 'Editor',
-    grading: 'L2',
     outputType: 'DailyCoding',
   },
   {
     whatsTheName: 'Windsurf',
     urlLink: 'https://codeium.com/',
-    description: 'Was launched by Codeium on November 14, 2024',
+    description: 'Products from Codeium, released on November 13, 2024. I saw it on Zhihu and tried it out immediately, which was very amazing. At the same time, it consolidated my interest in AI coding.',
     company: 'Codeium',
     howToUseType: 'Editor',
-    grading: 'L2',
     outputType: 'DailyCoding',
   },
   {
@@ -53,7 +50,6 @@ export const aiTools: AiTool[] = [
     description: 'Mac and Windows are both supported',
     company: 'ByteDance',
     howToUseType: 'Editor',
-    grading: 'L2',
     outputType: 'DailyCoding',
   },
   {
@@ -68,7 +64,6 @@ export const aiTools: AiTool[] = [
     urlLink: 'https://trypear.ai/',
     description: 'Aider + Supermaven + MemO + Continue + Perplexity',
     howToUseType: 'Editor',
-    grading: 'L2',
   },
   {
     whatsTheName: 'Void',
@@ -91,7 +86,6 @@ export const aiTools: AiTool[] = [
     description: 'DeepSeek R1 in Visual Studio Code with Cline + OpenRouter',
     company: '',
     howToUseType: 'Extension',
-    grading: 'L2',
   },
   {
     whatsTheName: 'GitHub Copilot',
@@ -106,7 +100,6 @@ export const aiTools: AiTool[] = [
     description: '+ Roo Cline + DeepSeek',
     company: '',
     howToUseType: 'Extension',
-    grading: 'L2',
   },
   {
     whatsTheName: 'Codeium',
@@ -114,7 +107,6 @@ export const aiTools: AiTool[] = [
     description: 'Codeium extension',
     company: '',
     howToUseType: 'Extension',
-    grading: 'L1',
   },
   {
     whatsTheName: 'tongyi lingma',
@@ -136,7 +128,6 @@ export const aiTools: AiTool[] = [
     description: 'formerly Codium',
     company: '',
     howToUseType: 'Extension',
-    grading: 'L1',
   },
   {
     whatsTheName: 'Tabnine',
@@ -252,8 +243,6 @@ export const aiTools: AiTool[] = [
     description: 'An agentic coding tool made by Anthropic',
     company: 'Anthropic',
     howToUseType: 'Terminal',
-    grading: 'L4',
-    outputType: 'DailyCoding',
   },
   {
     whatsTheName: 'Aider',
@@ -261,7 +250,6 @@ export const aiTools: AiTool[] = [
     description: 'There is AI ability in the terminal',
     company: '',
     howToUseType: 'Terminal',
-    grading: 'L2',
     outputType: 'Terminal',
   },
   {
@@ -286,7 +274,6 @@ export const aiTools: AiTool[] = [
     description: 'A terminal for the modern age',
     company: '',
     howToUseType: 'Terminal',
-    grading: 'L1',
     outputType: 'Terminal',
   },
   // AI 软件工程师 (AI software engineer)
@@ -296,7 +283,6 @@ export const aiTools: AiTool[] = [
     description: 'MGX - Multi-agent framework, SOP standardized AI software engineer',
     company: 'DeepWisdom',
     howToUseType: 'AI software engineer',
-    grading: 'L5',
     outputType: 'Infrastructure'
   },
   {
@@ -349,5 +335,11 @@ export const aiTools: AiTool[] = [
     howToUseType: 'Browser-based',
     outputType: 'FrontEndComponent',
   },
-
+  {
+    whatsTheName: 'Gemini Code Assist',
+    description: 'AI coding assistance for any language, integrated directly into your development environment',
+    urlLink: 'https://codeassist.google/',
+    company: 'Google',
+    howToUseType: 'Extension',
+  },
 ];

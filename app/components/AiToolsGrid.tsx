@@ -1,6 +1,5 @@
 import { AiTool } from '../data/aiTools'
 import { motion } from 'framer-motion'
-import { gradingColors } from '../constants/colors'
 
 interface AiToolsGridProps {
   tools: AiTool[]
@@ -90,8 +89,12 @@ export function AiToolsGrid({ tools }: AiToolsGridProps) {
         return (
           <section key={category.type} className='space-y-4'>
             <div className='space-y-2'>
-              <h2 className='text-2xl font-bold text-gray-900 dark:text-gray-100'>
+              <h2 className='text-2xl font-bold text-gray-900 dark:text-gray-100 flex items-center gap-2'>
+               
                 {category.title}
+                <span className='text-sm bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-300 px-3 py-1 rounded-full ml-2'>
+                  {categoryTools.length} 
+                </span>
               </h2>
               <p className='text-gray-600 dark:text-gray-300'>{category.description}</p>
             </div>
@@ -129,23 +132,13 @@ export function AiToolsGrid({ tools }: AiToolsGridProps) {
                     })}
                   </script>
                   <div className='flex flex-col items-start space-y-3'>
-                    {/* 标题和分级标签容器 */}
+                    {/* 标题容器 - 移除分级标签 */}
                     <div className='w-full flex items-start justify-between gap-2'>
                       <h3 className='text-lg font-medium text-gray-900 dark:text-gray-100
                         group-hover:text-blue-600 dark:group-hover:text-blue-400 
                         transition-colors duration-200'>
                         {tool.whatsTheName}
                       </h3>
-                      <div className='flex items-center gap-2 flex-shrink-0'>
-                        {tool.grading && (
-                          <span className={`inline-flex items-center px-2 py-0.5 text-xs font-medium rounded-full
-                            ${gradingColors[tool.grading].bg} 
-                            ${gradingColors[tool.grading].text}
-                            whitespace-nowrap`}>
-                            {tool.grading}
-                          </span>
-                        )}
-                      </div>
                     </div>
                     
                     {/* 描述文本 */}

@@ -1,6 +1,5 @@
 import { AiTool } from '../data/aiTools'
 import { motion } from 'framer-motion'
-import { gradingColors } from '../constants/colors'
 
 interface AiToolsByOutputProps {
   tools: AiTool[]
@@ -143,6 +142,9 @@ export function AiToolsByOutput({ tools }: AiToolsByOutputProps) {
               <h2 className='text-2xl font-bold text-gray-900 dark:text-gray-100 flex items-center gap-2'>
                 <span>{category.icon}</span>
                 {category.title}
+                <span className="text-sm bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-300 px-3 py-1 rounded-full ml-2">
+                  {categoryTools.length}
+                </span>
               </h2>
               <p className='text-gray-600 dark:text-gray-300'>{category.description}</p>
             </div>
@@ -180,14 +182,6 @@ export function AiToolsByOutput({ tools }: AiToolsByOutputProps) {
                         transition-colors duration-200'>
                         {tool.whatsTheName}
                       </h3>
-                      {tool.grading && (
-                        <span className={`inline-flex items-center px-2 py-0.5 text-xs font-medium rounded-full
-                          ${gradingColors[tool.grading].bg} 
-                          ${gradingColors[tool.grading].text}
-                          whitespace-nowrap`}>
-                          {tool.grading}
-                        </span>
-                      )}
                     </div>
                     <p className='text-sm text-gray-600 dark:text-gray-300'>
                       {tool.description}

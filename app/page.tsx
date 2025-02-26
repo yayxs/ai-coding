@@ -3,14 +3,15 @@
 import { useState, useEffect } from 'react';
 import { AiToolsGrid } from './components/AiToolsGrid';
 import { AiToolsByOutput } from './components/AiToolsByOutput';
+import { AiToolsByCompany } from './components/AiToolsByCompany';
 import { LatestUpdates } from './components/LatestUpdates';
 import { aiTools } from './data/aiTools';
 import { Button } from './components/Button';
-import { Layout, Layers } from 'lucide-react';
+import { Layout, Layers, Building2 } from 'lucide-react';
 
 export default function Home() {
-  // Default to category view
-  const [viewMode, setViewMode] = useState<'category' | 'track'>('category');
+  // Update to include the new company view
+  const [viewMode, setViewMode] = useState<'category' | 'track' | 'company'>('category');
   const [buildDate, setBuildDate] = useState<string>('');
   
   useEffect(() => {
@@ -25,8 +26,8 @@ export default function Home() {
     date: buildDate,
     tools: [
       {
-        name: 'Claude Code',
-        link: 'https://docs.anthropic.com/zh-CN/docs/agents-and-tools/claude-code/overview'
+        name: 'Gemini Code Assist',
+        link: 'https://codeassist.google/'
       }
       // Add more tools if needed
     ]
@@ -53,12 +54,22 @@ export default function Home() {
           <Layers className="w-4 h-4" />
           By Track
         </Button>
+        <Button 
+          variant={viewMode === 'company' ? 'outline' : 'default'}
+          onClick={() => setViewMode('company')}
+          className="flex items-center gap-2"
+        >
+          <Building2 className="w-4 h-4" />
+          By Company
+        </Button>
       </div>
       
       {viewMode === 'category' ? (
         <AiToolsGrid tools={aiTools} />
-      ) : (
+      ) : viewMode === 'track' ? (
         <AiToolsByOutput tools={aiTools} />
+      ) : (
+        <AiToolsByCompany tools={aiTools} />
       )}
     </main>
   );
