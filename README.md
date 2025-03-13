@@ -69,9 +69,14 @@ pnpm start
 ```
 app/
   ├── components/   # React components
+  ├── constants/    # Constant definitions
   ├── data/         # Data files
   ├── lib/          # Utility functions
-  └── types/        # TypeScript type definitions
+  ├── model-timing/ # Model timing related
+  ├── globals.css   # Global styles
+  ├── layout.tsx    # Layout component
+  ├── page.tsx      # Main page component
+  └── favicon.ico   # Website favicon
 ```
 
 ## Contribution Guidelines
