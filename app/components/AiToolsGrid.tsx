@@ -1,5 +1,4 @@
 import { AiTool } from '../data/aiTools'
-import { motion } from 'framer-motion'
 
 interface AiToolsGridProps {
   tools: AiTool[]
@@ -43,39 +42,6 @@ const categories = [
   }
 ]
 
-const container = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.05,
-      delayChildren: 0.1,
-      duration: 0.3,
-      ease: "easeOut"
-    }
-  }
-}
-
-const item = {
-  hidden: { 
-    opacity: 0, 
-    y: 10,
-    scale: 0.98
-  },
-  show: { 
-    opacity: 1, 
-    y: 0,
-    scale: 1,
-    transition: {
-      type: "spring",
-      stiffness: 70,
-      damping: 25,
-      mass: 0.5,
-      duration: 0.4
-    }
-  }
-}
-
 export function AiToolsGrid({ tools }: AiToolsGridProps) {
   return (
     <div className='w-full max-w-7xl mx-auto space-y-12'>
@@ -98,17 +64,12 @@ export function AiToolsGrid({ tools }: AiToolsGridProps) {
               </h2>
               <p className='text-gray-600 dark:text-gray-300'>{category.description}</p>
             </div>
-            <motion.div 
-              variants={container}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true, margin: "-100px" }}
+            <div 
               className='grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'
             >
               {categoryTools.map((tool) => (
-                <motion.a
+                <a
                   key={tool.whatsTheName}
-                  variants={item}
                   href={tool.urlLink}
                   target='_blank'
                   rel='noopener noreferrer'
@@ -153,9 +114,9 @@ export function AiToolsGrid({ tools }: AiToolsGridProps) {
                       </div>
                     )}
                   </div>
-                </motion.a>
+                </a>
               ))}
-            </motion.div>
+            </div>
           </section>
         )
       })}

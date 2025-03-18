@@ -1,29 +1,9 @@
 'use client';
 
 import { AiTool } from '../data/aiTools';
-import { motion } from 'framer-motion';
 
 interface AiToolsByCompanyProps {
   tools: AiTool[];
-}
-
-// 动画配置
-const container = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.05,
-      delayChildren: 0.1,
-      duration: 0.3,
-      ease: "easeOut"
-    }
-  }
-}
-
-const item = {
-  hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.3 } }
 }
 
 export function AiToolsByCompany({ tools }: AiToolsByCompanyProps) {
@@ -59,22 +39,12 @@ export function AiToolsByCompany({ tools }: AiToolsByCompanyProps) {
                 </span>
               </h2>
             </div>
-            <motion.div 
-              variants={container}
-              initial="hidden"
-              whileInView="show"
-              layout
-              viewport={{ 
-                once: true, 
-                margin: "-50px",
-                amount: 0.3
-              }}
+            <div
               className='grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'
             >
               {companyTools.map((tool) => (
-                <motion.a
+                <a
                   key={tool.whatsTheName}
-                  variants={item}
                   href={tool.urlLink}
                   target='_blank'
                   rel='noopener noreferrer'
@@ -101,9 +71,9 @@ export function AiToolsByCompany({ tools }: AiToolsByCompanyProps) {
                       {tool.description}
                     </p>
                   </div>
-                </motion.a>
+                </a>
               ))}
-            </motion.div>
+            </div>
           </section>
         )
       })}
@@ -119,22 +89,12 @@ export function AiToolsByCompany({ tools }: AiToolsByCompanyProps) {
               </span>
             </h2>
           </div>
-          <motion.div 
-            variants={container}
-            initial="hidden"
-            whileInView="show"
-            layout
-            viewport={{ 
-              once: true, 
-              margin: "-50px",
-              amount: 0.3
-            }}
+          <div
             className='grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'
           >
             {toolsWithoutCompany.map((tool) => (
-              <motion.a
+              <a
                 key={tool.whatsTheName}
-                variants={item}
                 href={tool.urlLink}
                 target='_blank'
                 rel='noopener noreferrer'
@@ -161,9 +121,9 @@ export function AiToolsByCompany({ tools }: AiToolsByCompanyProps) {
                     {tool.description}
                   </p>
                 </div>
-              </motion.a>
+              </a>
             ))}
-          </motion.div>
+          </div>
         </section>
       )}
     </div>

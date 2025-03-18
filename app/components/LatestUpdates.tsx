@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+// import { motion } from 'framer-motion';
 
 interface LatestUpdateProps {
   date: string;
@@ -10,10 +10,7 @@ interface LatestUpdateProps {
 
 export function LatestUpdates({ date, tools }: LatestUpdateProps) {
   return (
-    <motion.div 
-      initial={{ opacity: 0, y: -10 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
+    <div 
       className="w-full max-w-7xl mx-auto mb-8 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-100 dark:border-blue-800"
     >
       <div className="flex flex-wrap items-center justify-center gap-2 p-3 text-center">
@@ -37,6 +34,6 @@ export function LatestUpdates({ date, tools }: LatestUpdateProps) {
           ))}
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 } 

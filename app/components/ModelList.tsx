@@ -1,7 +1,8 @@
 'use client';
 
 import { ModelRelease } from '../data/models';
-import { motion } from 'framer-motion';
+// 移除framer-motion导入
+// import { motion } from 'framer-motion';
 
 export default function ModelList({ releases }: { releases: ModelRelease[] }) {
   // 按日期倒序排序，最新的在前
@@ -12,11 +13,8 @@ export default function ModelList({ releases }: { releases: ModelRelease[] }) {
   return (
     <div className="space-y-4">
       {sortedReleases.map((release, index) => (
-        <motion.div
+        <div
           key={index}
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.3, delay: index * 0.05 }}
           className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm hover:shadow-md transition-all duration-200 border border-gray-200 dark:border-gray-700"
         >
           <div className="flex flex-wrap items-center justify-between gap-3">
@@ -42,7 +40,7 @@ export default function ModelList({ releases }: { releases: ModelRelease[] }) {
               {release.description}
             </p>
           )}
-        </motion.div>
+        </div>
       ))}
     </div>
   );
