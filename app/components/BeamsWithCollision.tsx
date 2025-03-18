@@ -15,7 +15,8 @@ export const BackgroundBeamsWithCollision = ({
     <div className={cn('relative h-full w-full overflow-hidden', className || '')}>
       <div className='relative z-10'>{children}</div>
       {/* 静态背景替代动态光束 */}
-      <div className="absolute inset-0 bg-grid-small-slate-900/[0.04] bg-[center_top_-1px] dark:bg-grid-small-slate-700/[0.05]"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-gray-50/30 to-white dark:from-gray-900/30 dark:to-gray-900"></div>
+      <div className="absolute inset-0 opacity-10 dark:opacity-20 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]"></div>
     </div>
   )
 }

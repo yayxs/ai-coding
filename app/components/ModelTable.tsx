@@ -1,7 +1,6 @@
 'use client';
 
 import { ModelRelease } from '../data/models';
-import { motion } from 'framer-motion';
 
 export default function ModelTable({ releases }: { releases: ModelRelease[] }) {
   // 按日期倒序排序，最新的在前
@@ -33,11 +32,8 @@ export default function ModelTable({ releases }: { releases: ModelRelease[] }) {
         </thead>
         <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
           {sortedReleases.map((release, index) => (
-            <motion.tr
+            <tr
               key={index}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3, delay: index * 0.05 }}
               className="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors duration-200"
             >
               <td className="px-6 py-4 text-sm text-gray-900 dark:text-gray-100">
@@ -65,7 +61,7 @@ export default function ModelTable({ releases }: { releases: ModelRelease[] }) {
                   </span>
                 )}
               </td>
-            </motion.tr>
+            </tr>
           ))}
         </tbody>
       </table>

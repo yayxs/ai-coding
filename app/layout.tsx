@@ -11,8 +11,8 @@ import { Providers } from './components/Providers'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'AI Coding Tools - The Ultimate AI Programming Tools Navigation',
-  description: 'Discover the latest and most comprehensive collection of AI programming tools, including code editors, IDE plugins, and terminal tools. Help developers find and use cutting-edge AI programming tools to boost development efficiency.',
+  title: 'AI Coding Tools - The Ultimate AI Programming Tools & Vibe Coding Navigation',
+  description: 'Discover the latest collection of AI programming and Vibe coding (氛围编码) tools, including code editors, IDE plugins, and terminal tools. Find tools that create the perfect programming atmosphere and flow state, boosting development efficiency and enhancing your coding experience.',
   keywords: [
     'AI Programming', 'AI 编程',
     'AI Code Assistant', 'AI 代码助手',
@@ -37,7 +37,16 @@ export const metadata: Metadata = {
     'Cursor', 'Cursor AI 编辑器',
     'Windsurf', 'Windsurf 编辑器',
     'Trae', 'Trae AI 助手',
-    'AI tools for improving daily coding efficiency', '提升日常编码效率的AI工具'
+    'AI tools for improving daily coding efficiency', '提升日常编码效率的AI工具',
+    'Vibe Coding', '氛围编码',
+    '编程氛围', 'Programming Atmosphere',
+    'Immersive Coding', '沉浸式编程',
+    'Flow State Programming', '心流编程',
+    'Ambient Coding', '环境感编程',
+    'Coding Experience', '编码体验',
+    'Developer Experience', '开发者体验',
+    'Aesthetic Programming', '美学编程',
+    '编程美学', 'Coding Environment'
   ].join(', '),
   authors: [
     { name: 'yayxs', url: 'https://github.com/yayxs' }
@@ -47,8 +56,8 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://aicoding.vercel.app/',
-    title: 'AI Coding Tools - The Ultimate AI Programming Tools Navigation',
-    description: 'Discover the latest and most comprehensive collection of AI programming tools, including code editors, IDE plugins, and terminal tools. Help developers find and use cutting-edge AI programming tools to boost development efficiency.',
+    title: 'AI Coding Tools - The Ultimate AI Programming & Vibe Coding Navigation',
+    description: 'Discover the latest collection of AI programming and Vibe coding (氛围编码) tools, including code editors, IDE plugins, and terminal tools. Find tools that create the perfect programming atmosphere and flow state, boosting development efficiency and enhancing your coding experience.',
     siteName: 'AI Coding Tools'
   },
   // twitter: {
