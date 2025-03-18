@@ -11,7 +11,7 @@ With the evolution of **AI Programming** (or `AI Coding`), there are increasingl
 ## Features
 
 - **AI Programming Tools**: Comprehensive collection of the latest AI-powered coding tools
-- **Vibe Coding (氛围编码)**: Tools to create the perfect programming atmosphere and flow state
+- **Vibe Coding**: Tools to create the perfect programming atmosphere and flow state
 - **Immersive Coding Environments**: Discover tools that enhance your programming experience
 - **Developer Experience**: Focus on tools that improve coding efficiency and enjoyment
 - **Multi-category Navigation**: Browse tools by type, company, or output format
@@ -93,21 +93,6 @@ AI assistance for version control:
 Additional AI programming tools:
 
 - **[CodeFuse](https://codefuse.ai/)** - Make R&D Simpler (Ant Group)
-
-## Directory Structure
-
-```
-app/
-  ├── components/   # React 组件
-  ├── constants/    # 常量定义
-  ├── data/         # 数据文件
-  ├── lib/          # 工具函数
-  ├── model-timing/ # 模型计时相关
-  ├── globals.css   # 全局样式
-  ├── layout.tsx    # 布局组件
-  ├── page.tsx      # 主页面组件
-  └── favicon.ico   # 网站图标
-```
 
 ## License
 
