@@ -74,14 +74,14 @@ export function AiToolsByOutput({ tools }: AiToolsByOutputProps) {
         return (
           <section key={category.type} className='space-y-4'>
             <div className='space-y-2'>
-              <h2 className='text-2xl font-bold text-gray-900 dark:text-gray-100 flex items-center gap-2'>
+              <h2 className='text-2xl font-bold text-foreground flex items-center gap-2'>
                 <span>{category.icon}</span>
                 {category.title}
                 <span className="text-sm bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-300 px-3 py-1 rounded-full ml-2">
                   {categoryTools.length}
                 </span>
               </h2>
-              <p className='text-gray-600 dark:text-gray-300'>{category.description}</p>
+              <p className='text-muted-foreground'>{category.description}</p>
             </div>
             <div
               className='grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'
@@ -92,29 +92,22 @@ export function AiToolsByOutput({ tools }: AiToolsByOutputProps) {
                   href={tool.urlLink}
                   target='_blank'
                   rel='noopener noreferrer'
-                  className='group relative block rounded-lg border border-gray-200 dark:border-gray-700 
-                    p-6 bg-white dark:bg-gray-800
-                    shadow-sm hover:shadow-lg hover:border-gray-300 dark:hover:border-gray-600 
-                    transition-all duration-200 ease-in-out 
-                    hover:-translate-y-1 hover:bg-gray-50 dark:hover:bg-gray-700'
+                  className='group relative block rounded-lg border border-border bg-card p-6 shadow-sm transition-all duration-200 ease-in-out hover:-translate-y-1 hover:shadow-lg hover:border-border/80 hover:bg-accent'
                 >
-                  {/* 复用现有的卡片内容结构 */}
                   <div className='flex flex-col items-start space-y-3'>
                     <div className='w-full flex items-start justify-between gap-2'>
-                      <h3 className='text-lg font-medium text-gray-900 dark:text-gray-100
-                        group-hover:text-blue-600 dark:group-hover:text-blue-400 
-                        transition-colors duration-200'>
+                      <h3 className='text-lg font-medium text-card-foreground transition-colors duration-200 group-hover:text-blue-600 dark:group-hover:text-blue-400'>
                         {tool.whatsTheName}
                       </h3>
+                      {tool.company && (
+                        <span className="text-xs px-2 py-1 bg-card-tag text-card-tag-foreground rounded-md">
+                          {tool.company}
+                        </span>
+                      )}
                     </div>
-                    <p className='text-sm text-gray-600 dark:text-gray-300'>
+                    <p className='text-sm text-card-muted-foreground'>
                       {tool.description}
                     </p>
-                    {tool.company && (
-                      <div className='mt-auto pt-2 text-xs font-medium text-gray-500 dark:text-gray-400'>
-                        {tool.company}
-                      </div>
-                    )}
                   </div>
                 </a>
               ))}
@@ -124,4 +117,4 @@ export function AiToolsByOutput({ tools }: AiToolsByOutputProps) {
       })}
     </div>
   )
-} 
+}

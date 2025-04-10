@@ -29,26 +29,27 @@ export const ThemeToggle = () => {
     <Button
       variant="ghost"
       size="icon"
-      onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+      onClick={() => {
+        console.log('Current theme:', theme);
+        setTheme(theme === 'dark' ? 'light' : 'dark');
+      }}
       aria-label="切换主题"
       className="transition-opacity duration-300"
     >
       <div className="relative w-5 h-5">
         <Sun
-          className={`h-5 w-5 absolute transition-all duration-300 text-gray-800 dark:text-gray-200 ${
-            theme === 'dark'
-              ? 'rotate-0 scale-100 opacity-100'
-              : 'rotate-90 scale-0 opacity-0'
-          }`}
+          className={`h-5 w-5 absolute transition-all duration-300 text-gray-800 dark:text-gray-200 ${theme !== 'dark'
+            ? 'rotate-0 scale-100 opacity-100'
+            : 'rotate-90 scale-0 opacity-0'
+            }`}
         />
         <Moon
-          className={`h-5 w-5 absolute transition-all duration-300 text-gray-800 dark:text-gray-200 ${
-            theme !== 'dark'
-              ? 'rotate-0 scale-100 opacity-100'
-              : '-rotate-90 scale-0 opacity-0'
-          }`}
+          className={`h-5 w-5 absolute transition-all duration-300 text-gray-800 dark:text-gray-200 ${theme === 'dark'
+            ? 'rotate-0 scale-100 opacity-100'
+            : '-rotate-90 scale-0 opacity-0'
+            }`}
         />
       </div>
     </Button>
   )
-} 
+}

@@ -15,10 +15,10 @@ export function AiToolsByCompany({ tools }: AiToolsByCompanyProps) {
         .map(tool => tool.company)
     )
   ).sort() as string[];
-  
+
   // 添加一个"其他"类别用于没有公司信息的工具
   const toolsWithoutCompany = tools.filter(tool => !tool.company || tool.company.trim() === '');
-  
+
   return (
     <div className='w-full max-w-7xl mx-auto space-y-12'>
       {companies.map((company) => {
@@ -32,7 +32,7 @@ export function AiToolsByCompany({ tools }: AiToolsByCompanyProps) {
         return (
           <section key={company} className='space-y-4'>
             <div className='space-y-2'>
-              <h2 className='text-2xl font-bold text-gray-900 dark:text-gray-100 flex items-center gap-2'>
+              <h2 className='text-2xl font-bold text-foreground flex items-center gap-2'>
                 {company}
                 <span className="text-sm bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-300 px-3 py-1 rounded-full ml-2">
                   {companyTools.length} tools
@@ -48,26 +48,20 @@ export function AiToolsByCompany({ tools }: AiToolsByCompanyProps) {
                   href={tool.urlLink}
                   target='_blank'
                   rel='noopener noreferrer'
-                  className='group relative block rounded-lg border border-gray-200 dark:border-gray-700 
-                    p-6 bg-white dark:bg-gray-800
-                    shadow-sm hover:shadow-lg hover:border-gray-300 dark:hover:border-gray-600 
-                    transition-all duration-200 ease-in-out 
-                    hover:-translate-y-1 hover:bg-gray-50 dark:hover:bg-gray-700'
+                  className='group relative block rounded-lg border border-border bg-card p-6 shadow-sm transition-all duration-200 ease-in-out hover:-translate-y-1 hover:shadow-lg hover:border-border/80 hover:bg-accent'
                 >
                   <div className='flex flex-col items-start space-y-3'>
                     <div className='w-full flex items-start justify-between gap-2'>
-                      <h3 className='text-lg font-medium text-gray-900 dark:text-gray-100
-                        group-hover:text-blue-600 dark:group-hover:text-blue-400 
-                        transition-colors duration-200'>
+                      <h3 className='text-lg font-medium text-card-foreground transition-colors duration-200 group-hover:text-blue-600 dark:group-hover:text-blue-400'>
                         {tool.whatsTheName}
                       </h3>
-                      
+
                       {/* Display howToUseType in top right corner */}
-                      <span className="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 rounded-md">
+                      <span className="text-xs px-2 py-1 bg-card-tag text-card-tag-foreground rounded-md">
                         {tool.howToUseType}
                       </span>
                     </div>
-                    <p className='text-sm text-gray-600 dark:text-gray-300'>
+                    <p className='text-sm text-card-muted-foreground'>
                       {tool.description}
                     </p>
                   </div>
@@ -77,12 +71,12 @@ export function AiToolsByCompany({ tools }: AiToolsByCompanyProps) {
           </section>
         )
       })}
-      
+
       {/* 显示没有公司信息的工具 */}
       {toolsWithoutCompany.length > 0 && (
         <section className='space-y-4'>
           <div className='space-y-2'>
-            <h2 className='text-2xl font-bold text-gray-900 dark:text-gray-100 flex items-center gap-2'>
+            <h2 className='text-2xl font-bold text-foreground flex items-center gap-2'>
               Other Tools
               <span className="text-sm bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-300 px-3 py-1 rounded-full ml-2">
                 {toolsWithoutCompany.length} tools
@@ -98,26 +92,20 @@ export function AiToolsByCompany({ tools }: AiToolsByCompanyProps) {
                 href={tool.urlLink}
                 target='_blank'
                 rel='noopener noreferrer'
-                className='group relative block rounded-lg border border-gray-200 dark:border-gray-700 
-                  p-6 bg-white dark:bg-gray-800
-                  shadow-sm hover:shadow-lg hover:border-gray-300 dark:hover:border-gray-600 
-                  transition-all duration-200 ease-in-out 
-                  hover:-translate-y-1 hover:bg-gray-50 dark:hover:bg-gray-700'
+                className='group relative block rounded-lg border border-border bg-card p-6 shadow-sm transition-all duration-200 ease-in-out hover:-translate-y-1 hover:shadow-lg hover:border-border/80 hover:bg-accent'
               >
                 <div className='flex flex-col items-start space-y-3'>
                   <div className='w-full flex items-start justify-between gap-2'>
-                    <h3 className='text-lg font-medium text-gray-900 dark:text-gray-100
-                      group-hover:text-blue-600 dark:group-hover:text-blue-400 
-                      transition-colors duration-200'>
+                    <h3 className='text-lg font-medium text-card-foreground transition-colors duration-200 group-hover:text-blue-600 dark:group-hover:text-blue-400'>
                       {tool.whatsTheName}
                     </h3>
-                    
+
                     {/* Display howToUseType in top right corner */}
-                    <span className="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 rounded-md">
+                    <span className="text-xs px-2 py-1 bg-card-tag text-card-tag-foreground rounded-md">
                       {tool.howToUseType}
                     </span>
                   </div>
-                  <p className='text-sm text-gray-600 dark:text-gray-300'>
+                  <p className='text-sm text-card-muted-foreground'>
                     {tool.description}
                   </p>
                 </div>
@@ -128,4 +116,4 @@ export function AiToolsByCompany({ tools }: AiToolsByCompanyProps) {
       )}
     </div>
   )
-} 
+}
