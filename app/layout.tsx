@@ -84,10 +84,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <link rel="canonical" href="https://aicoding.vercel.app/" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
       </head>
-      <body className='min-h-screen bg-white dark:bg-gray-900 text-foreground transition-colors duration-300'>
+      <body className='min-h-screen bg-white dark:bg-gray-900 text-foreground'>
         <Providers>
           <Header />
-          <main className='relative transition-colors duration-300'>
+          <main className='relative'>
 
             <div className='relative z-10 mx-auto max-w-7xl px-4 sm:px-4 md:px-6 lg:px-8'>
               {children}

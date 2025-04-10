@@ -16,9 +16,9 @@ export const ThemeToggle = () => {
   if (!mounted) {
     return (
       <Button
-        variant="ghost"
+        variant="outline"
         size="icon"
-        className="opacity-0 transition-opacity"
+        className="opacity-0 transition-opacity rounded-full"
       >
         <Moon className="h-5 w-5" />
       </Button>
@@ -27,26 +27,26 @@ export const ThemeToggle = () => {
 
   return (
     <Button
-      variant="ghost"
+      variant="outline"
       size="icon"
       onClick={() => {
         console.log('Current theme:', theme);
         setTheme(theme === 'dark' ? 'light' : 'dark');
       }}
       aria-label="切换主题"
-      className="transition-opacity duration-300"
+      className="rounded-full shadow-lg bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700"
     >
       <div className="relative w-5 h-5">
         <Sun
-          className={`h-5 w-5 absolute transition-all duration-300 text-gray-800 dark:text-gray-200 ${theme !== 'dark'
-            ? 'rotate-0 scale-100 opacity-100'
-            : 'rotate-90 scale-0 opacity-0'
+          className={`h-5 w-5 absolute text-gray-800 dark:text-gray-200 ${theme !== 'dark'
+            ? 'opacity-100'
+            : 'opacity-0'
             }`}
         />
         <Moon
-          className={`h-5 w-5 absolute transition-all duration-300 text-gray-800 dark:text-gray-200 ${theme === 'dark'
-            ? 'rotate-0 scale-100 opacity-100'
-            : '-rotate-90 scale-0 opacity-0'
+          className={`h-5 w-5 absolute text-gray-800 dark:text-gray-200 ${theme === 'dark'
+            ? 'opacity-100'
+            : 'opacity-0'
             }`}
         />
       </div>
