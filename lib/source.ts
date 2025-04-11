@@ -6,4 +6,6 @@ export const source = loader({
   // it assigns a URL to your pages
   baseUrl: '/docs',
   source: docs.toFumadocsSource(),
+  rootDir: 'content/docs/introduction',
+  rootGroup: false
 });
