@@ -17,7 +17,7 @@ const MdxContent = async ({ filePath, className = '' }: MDXContentProps) => {
 
     // 使用Next.js的MDXRemote组件渲染MDX内容
     return (
-      <div className={`mdx-content prose prose-lg prose-slate dark:prose-invert ${className}`}>
+      <div className={`mdx-content prose prose-lg prose-slate ${className}`}>
         <MDXRemote source={mdxContent} />
       </div>
     );
