@@ -1,217 +1,214 @@
-## 背景
+## Background
 
-随着AI编程（或AI编码）的发展，越来越多的产品可用，例如`Cursor`和其他产品。为了更好地了解存在哪些工具、扩展、原生编辑器、云编辑器、
-终端。我陆陆续续写了这篇内容。
+With the development of AI programming (or AI coding), more and more products have become available, such as `Cursor` and others. To better understand the various tools, extensions, native editors, cloud editors, and terminals in this space, I have gradually compiled this content.
 
-当前，社区中的大多数`AI Coding`或`Vibe Coding`一般是导航站点。我最初也想写一个导航站点，但后来觉得导航站点本身不会展示价值。与它们不同的是：我想有一些自己"固执己见的"内容。
+Currently, most `AI Coding` or `Vibe Coding` resources in the community serve as navigation sites. I initially considered creating a navigation site myself, but later felt that navigation sites alone don't provide much value. What sets this resource apart is that I want to include my own "opinionated" content.
 
-## 现状
+## Current Landscape
 
-聊一聊现状，目前`LLM` + `MCP` + `Agent` 是主流。我们已经不再关注技术的细节。从深度慢慢的从广度转换。如果你在开发的过程中，使用一些开源的框架或者是库，我们不再纠结
-具体的实现原理，曾经我也在纠结是使用 `Next.js` 还是 `Astro`，但是现在都已经不重要了。我们可以使用 `GitHub MCP` 以及 `Git MCP`阅读一些开源的代码。当然随着`DeepWiki`
-的出现，外加`Context7 MCP`。作为程序员，我们已经不用纠结什么技术，甚至什么原理了。
+Let's discuss the current landscape. Today, the combination of `LLM` + `MCP` + `Agent` is mainstream. We no longer focus on technical details as deeply as before, shifting gradually from depth to breadth. When developing with open-source frameworks or libraries, we don't need to obsess over specific implementation principles. I used to agonize over whether to use `Next.js` or `Astro`, but that's no longer important. We can use `GitHub MCP` and `Git MCP` to read open-source code. With the emergence of `DeepWiki` and `Context7 MCP`, as programmers, we no longer need to stress about which technology to use or even how they work under the hood.
 
-## 原生编辑器
+## Native Editors
 
-原生编辑器：指的是类似`VSCode`这种，能够安装在用户的电脑上使用。
+Native editors refer to applications like `VSCode` that can be installed on a user's computer.
 
 ### Cursor
 
-Cursor 是一款与 ChatGPT 同期推出的产品，随着 Anthropic 的 Claude 3.5 Sonnet 的发布而更加闪耀！我已经付费使用了它，我相信它目前是宇宙中最强大的 AI 编辑器。
+Cursor is a product launched around the same time as ChatGPT, and it shines even brighter with the release of Anthropic's Claude 3.5 Sonnet! I have paid for it, and I believe it is currently the most powerful AI editor in the universe.
 
-- **公司**：Anysphere
-- **类型**：编辑器
-- **输出类型**：日常编码
-- **网址**：[https://www.cursor.com/](https://www.cursor.com/)
+- **Company**: Anysphere
+- **Type**: Editor
+- **Output Type**: Daily Coding
+- **Website**: [https://www.cursor.com/](https://www.cursor.com/)
 
 ### Windsurf
 
-Windsurf 是由 Codeium 开发的产品，于2024年11月13日发布。我在知乎上看到后立即尝试了它，感觉非常惊艳。同时，它巩固了我对 AI 编码的兴趣。
+Windsurf is a product developed by Codeium, released on November 13, 2024. I saw it on Zhihu and tried it immediately, which was very impressive. At the same time, it reinforced my interest in AI coding.
 
-- **公司**：Codeium
-- **类型**：编辑器
-- **输出类型**：日常编码
-- **网址**：[https://codeium.com/](https://codeium.com/)
+- **Company**: Codeium
+- **Type**: Editor
+- **Output Type**: Daily Coding
+- **Website**: [https://codeium.com/](https://codeium.com/)
 
 ### Trae
 
-Trae 同时支持 Mac 和 Windows 系统，是字节跳动开发的编辑器。
+Trae supports both Mac and Windows systems and is developed by ByteDance.
 
-- **公司**：ByteDance
-- **类型**：编辑器
-- **输出类型**：日常编码
-- **网址**：[https://www.trae.ai/](https://www.trae.ai/)
+- **Company**: ByteDance
+- **Type**: Editor
+- **Output Type**: Daily Coding
+- **Website**: [https://www.trae.ai/](https://www.trae.ai/)
 
 ### Zed
 
-Zed 是一款面向未来的编辑器，目前尚不支持 Windows 系统。
+Zed is an editor designed for the future, though Windows support is not yet available.
 
-- **类型**：编辑器
-- **网址**：[https://zed.dev/](https://zed.dev/)
+- **Type**: Editor
+- **Website**: [https://zed.dev/](https://zed.dev/)
 
-### 其他编辑器
+### Other Editors
 
-还有一些值得关注的 AI 编辑器：
+There are several other noteworthy AI editors:
 
-- **PearAI**：结合了 Aider、Supermaven、MemO、Continue 和 Perplexity 的功能 [https://trypear.ai/](https://trypear.ai/)
-- **Void**：一个开源的 Cursor 替代品 [https://voideditor.com/](https://voideditor.com/)
-- **Aide**：由 CodeStory.ai 开发的开源 AI 原生 IDE [https://aide.dev/](https://aide.dev/)
+- **PearAI**: Combines the functionality of Aider, Supermaven, MemO, Continue, and Perplexity [https://trypear.ai/](https://trypear.ai/)
+- **Void**: An open-source alternative to Cursor [https://voideditor.com/](https://voideditor.com/)
+- **Aide**: An open-source AI-native IDE developed by CodeStory.ai [https://aide.dev/](https://aide.dev/)
 
-## 扩展类工具
+## Extensions
 
-扩展类工具可以集成到现有的编辑器（如 VSCode）中，增强编辑器的 AI 功能。
+Extensions can be integrated into existing editors (like VSCode) to enhance their AI capabilities.
 
 ### GitHub Copilot
 
-GitHub Copilot 是由 GitHub (Microsoft) 开发的代码补全工具，已内置于 Visual Studio Code 中。
+GitHub Copilot is a code completion tool developed by GitHub (Microsoft) and is built into Visual Studio Code.
 
-- **公司**：GitHub (Microsoft)
-- **类型**：扩展
-- **网址**：[https://github.com/features/copilot](https://github.com/features/copilot)
+- **Company**: GitHub (Microsoft)
+- **Type**: Extension
+- **Website**: [https://github.com/features/copilot](https://github.com/features/copilot)
 
 ### Cline Roo
 
-Cline Roo 在 Visual Studio Code 中集成了 DeepSeek R1 与 OpenRouter。
+Cline Roo integrates DeepSeek R1 with OpenRouter in Visual Studio Code.
 
-- **类型**：扩展
-- **网址**：[https://cline.bot/](https://cline.bot/)
+- **Type**: Extension
+- **Website**: [https://cline.bot/](https://cline.bot/)
 
 ### Continue
 
-Continue 与 Roo Cline 和 DeepSeek 结合使用。
+Continue works in conjunction with Roo Cline and DeepSeek.
 
-- **类型**：扩展
-- **网址**：[https://www.continue.dev/](https://www.continue.dev/)
+- **Type**: Extension
+- **Website**: [https://www.continue.dev/](https://www.continue.dev/)
 
-### 其他扩展
+### Other Extensions
 
-- **Codeium**：[https://codeium.com/download](https://codeium.com/download)
-- **通义灵码**：由阿里云开发 [https://lingma.aliyun.com/](https://lingma.aliyun.com/)
-- **Cody**：由 Sourcegraph 开发 [https://sourcegraph.com/cody](https://sourcegraph.com/cody)
-- **Qodo**（原 Codium）：[https://www.qodo.ai/](https://www.qodo.ai/)
-- **Tabnine**：提供自动补全功能 [https://www.tabnine.com/](https://www.tabnine.com/)
-- **百度 Comate**：你的 AI 编码伙伴 [https://comate.baidu.com/zh](https://comate.baidu.com/zh)
-- **Amazon Q**（原 CodeWhisperer）：[https://aws.amazon.com/q/developer/](https://aws.amazon.com/q/developer/)
-- **CodeGeeX**：由智谱 AI 开发 [https://codegeex.cn/](https://codegeex.cn/)
-- **腾讯云 AI 代码助手**：基于腾讯混元大模型 [https://copilot.tencent.com/](https://copilot.tencent.com/)
-- **Gemini Code Assist**：Google 的 AI 编码助手 [https://codeassist.google/](https://codeassist.google/)
+- **Codeium**: [https://codeium.com/download](https://codeium.com/download)
+- **Tongyi Lingma**: Developed by Alibaba Cloud [https://lingma.aliyun.com/](https://lingma.aliyun.com/)
+- **Cody**: Developed by Sourcegraph [https://sourcegraph.com/cody](https://sourcegraph.com/cody)
+- **Qodo** (formerly Codium): [https://www.qodo.ai/](https://www.qodo.ai/)
+- **Tabnine**: Offers autocompletion features [https://www.tabnine.com/](https://www.tabnine.com/)
+- **Baidu Comate**: Your AI coding companion [https://comate.baidu.com/zh](https://comate.baidu.com/zh)
+- **Amazon Q** (formerly CodeWhisperer): [https://aws.amazon.com/q/developer/](https://aws.amazon.com/q/developer/)
+- **CodeGeeX**: Developed by ZhipuAI [https://codegeex.cn/](https://codegeex.cn/)
+- **Tencent Cloud AI Code Assistant**: Based on the Hunyuan LLM [https://copilot.tencent.com/](https://copilot.tencent.com/)
+- **Gemini Code Assist**: Google's AI coding assistant [https://codeassist.google/](https://codeassist.google/)
 
-## 基于浏览器的工具
+## Browser-Based Tools
 
-基于浏览器的工具不需要安装，直接在浏览器中使用。
+Browser-based tools don't require installation and can be used directly in a web browser.
 
 ### v0
 
-v0 是一个始终在线的编程伙伴，由 Vercel 开发。
+v0 is an always-on pair-programmer developed by Vercel.
 
-- **公司**：Vercel
-- **类型**：浏览器端工具
-- **输出类型**：Web 应用
-- **网址**：[https://v0.dev/](https://v0.dev/)
+- **Company**: Vercel
+- **Type**: Browser-based
+- **Output Type**: Web App
+- **Website**: [https://v0.dev/](https://v0.dev/)
 
 ### Bolt
 
-Bolt 可通过 bolt.diy 或 bolt.new 访问，由 StackBlitz 开发。
+Bolt can be accessed via bolt.diy or bolt.new and is developed by StackBlitz.
 
-- **公司**：StackBlitz
-- **类型**：浏览器端工具
-- **输出类型**：Web 应用
-- **网址**：[https://bolt.new/](https://bolt.new/)
+- **Company**: StackBlitz
+- **Type**: Browser-based
+- **Output Type**: Web App
+- **Website**: [https://bolt.new/](https://bolt.new/)
 
 ### Lovable
 
-Lovable 是一个超强的全栈工程师工具。
+Lovable is a superhuman full-stack engineer tool.
 
-- **类型**：浏览器端工具
-- **输出类型**：Web 应用
-- **网址**：[https://lovable.dev/](https://lovable.dev/)
+- **Type**: Browser-based
+- **Output Type**: Web App
+- **Website**: [https://lovable.dev/](https://lovable.dev/)
 
 ### Devv Builder
 
-Devv Builder 可以看作是 Bolt.new / Lovable 的后端版本。
+Devv Builder can be thought of as the backend version of Bolt.new / Lovable.
 
-- **类型**：浏览器端工具
-- **输出类型**：后端
-- **网址**：[https://devv.ai/zh/build](https://devv.ai/zh/build)
+- **Type**: Browser-based
+- **Output Type**: Backend
+- **Website**: [https://devv.ai/zh/build](https://devv.ai/zh/build)
 
-### 其他浏览器端工具
+### Other Browser-Based Tools
 
-- **sitebrew.ai**：在几秒钟内生成网站并与世界分享 [https://www.sitebrew.ai/](https://www.sitebrew.ai/)
-- **MarsCode**：由字节跳动开发的云 IDE [https://www.marscode.com/](https://www.marscode.com/)
-- **Replit**：创建美观、现代的 Web 应用程序 [https://replit.com/](https://replit.com/)
-- **Project IDX**：Google 开发的 AI 辅助工作空间 [https://idx.dev/](https://idx.dev/)
-- **CodeGuide**：AI 驱动的代码库文档生成器 [https://www.codeguide.dev/](https://www.codeguide.dev/)
+- **sitebrew.ai**: Generate a site and share it with the world in seconds [https://www.sitebrew.ai/](https://www.sitebrew.ai/)
+- **MarsCode**: A cloud IDE developed by ByteDance [https://www.marscode.com/](https://www.marscode.com/)
+- **Replit**: Create beautiful, modern web applications [https://replit.com/](https://replit.com/)
+- **Project IDX**: An AI-assisted workspace by Google [https://idx.dev/](https://idx.dev/)
+- **CodeGuide**: AI-powered documentation generator for your codebase [https://www.codeguide.dev/](https://www.codeguide.dev/)
 
-## 终端工具
+## Terminal Tools
 
-终端工具增强了命令行界面，添加了 AI 功能。
+Terminal tools enhance the command-line interface by adding AI capabilities.
 
 ### Claude Code
 
-Claude Code 是 Anthropic 开发的代理型编码工具。
+Claude Code is an agentic coding tool made by Anthropic.
 
-- **公司**：Anthropic
-- **类型**：终端
-- **网址**：[https://docs.anthropic.com/zh-CN/docs/agents-and-tools/claude-code/overview](https://docs.anthropic.com/zh-CN/docs/agents-and-tools/claude-code/overview)
+- **Company**: Anthropic
+- **Type**: Terminal
+- **Website**: [https://docs.anthropic.com/zh-CN/docs/agents-and-tools/claude-code/overview](https://docs.anthropic.com/zh-CN/docs/agents-and-tools/claude-code/overview)
 
 ### Aider
 
-Aider 在终端中提供 AI 能力。
+Aider provides AI capabilities in the terminal.
 
-- **类型**：终端
-- **输出类型**：终端
-- **网址**：[https://aider.chat/](https://aider.chat/)
+- **Type**: Terminal
+- **Output Type**: Terminal
+- **Website**: [https://aider.chat/](https://aider.chat/)
 
 ### Warp
 
-Warp 是一款 AI 增强型终端。
+Warp is an AI-enhanced terminal.
 
-- **类型**：终端
-- **输出类型**：终端
-- **网址**：[https://www.warp.dev/](https://www.warp.dev/)
+- **Type**: Terminal
+- **Output Type**: Terminal
+- **Website**: [https://www.warp.dev/](https://www.warp.dev/)
 
-### 其他终端工具
+### Other Terminal Tools
 
-- **Wave**：通过将上下文引入终端来停止上下文切换 [https://www.waveterm.dev/](https://www.waveterm.dev/)
-- **Tabby**：现代终端 [https://tabby.sh/](https://tabby.sh/)
+- **Wave**: Stop context switching by bringing context into your terminal [https://www.waveterm.dev/](https://www.waveterm.dev/)
+- **Tabby**: A terminal for the modern age [https://tabby.sh/](https://tabby.sh/)
 
-## AI 软件工程师
+## AI Software Engineers
 
 ### MetaGPT
 
-MetaGPT (MGX) 是一个多代理框架，标准化 SOP 的 AI 软件工程师。
+MetaGPT (MGX) is a multi-agent framework and standardized SOP AI software engineer.
 
-- **公司**：DeepWisdom
-- **类型**：AI 软件工程师
-- **输出类型**：基础设施
-- **网址**：[https://www.deepwisdom.ai/](https://www.deepwisdom.ai/)
+- **Company**: DeepWisdom
+- **Type**: AI Software Engineer
+- **Output Type**: Infrastructure
+- **Website**: [https://www.deepwisdom.ai/](https://www.deepwisdom.ai/)
 
 ### Devin
 
-Devin 被誉为第一个 AI 软件工程师。
+Devin is touted as the first AI software engineer.
 
-- **类型**：AI 软件工程师
-- **网址**：[https://www.cognition.ai/blog/introducing-devin](https://www.cognition.ai/blog/introducing-devin)
+- **Type**: AI Software Engineer
+- **Website**: [https://www.cognition.ai/blog/introducing-devin](https://www.cognition.ai/blog/introducing-devin)
 
-## 其他类型工具
+## Other Types of Tools
 
-### 移动 App 开发
+### Mobile App Development
 
-- **Rork**：快速构建任何移动应用 [https://rork.app/](https://rork.app/)
-- **a0**：在几分钟内创建移动应用，由 Y Combinator 支持 [https://a0.dev/](https://a0.dev/)
+- **Rork**: Build any mobile app, fast [https://rork.app/](https://rork.app/)
+- **a0**: Mobile apps in minutes, backed by Y Combinator [https://a0.dev/](https://a0.dev/)
 
-### 前端组件生成
+### Frontend Component Generation
 
-- **Screenshot to Code**：从截图生成前端组件代码 [https://screenshottocode.com/](https://screenshottocode.com/)
+- **Screenshot to Code**: Generate frontend component code from screenshots [https://screenshottocode.com/](https://screenshottocode.com/)
 
-### Git 工具
+### Git Tools
 
-- **Generate Commit Messages with AI**：在 Visual Studio Code 中使用 Copilot 生成提交消息
+- **Generate Commit Messages with AI**: Use Copilot in Visual Studio Code to generate commit messages
 
-### 基础设施
+### Infrastructure
 
-- **CodeFuse**：由蚂蚁集团开发，让研发更简单 [https://codefuse.ai/](https://codefuse.ai/)
+- **CodeFuse**: Developed by Ant Group to make R&D simpler [https://codefuse.ai/](https://codefuse.ai/)
 
-## 总结
+## Conclusion
 
-AI 编程工具正在快速发展，不断涌现出新的产品和功能。这些工具覆盖了从代码编辑、自动补全、应用生成到文档创建的各个方面，大大提高了开发效率。随着 LLM 和 Agent 技术的进步，我们可以期待未来会有更多创新的 AI 编程工具出现。
+AI programming tools are rapidly evolving, with new products and features constantly emerging. These tools cover various aspects from code editing, auto-completion, and application generation to documentation creation, greatly improving development efficiency. With the advancement of LLM and Agent technologies, we can expect more innovative AI programming tools to appear in the future.
