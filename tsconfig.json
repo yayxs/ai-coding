@@ -16,7 +16,6 @@
     "jsx": "preserve",
     "incremental": true,
     "paths": {
-      "@/.source": ["./.source/index.ts"],
       "@/*": ["./*"]
     },
     "plugins": [

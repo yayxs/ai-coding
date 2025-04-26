@@ -1,6 +1,0 @@
-{
-  "introduction": {
-    "title": "Introduction",
-    "children": ["introduction/what-is", "introduction/quick-start", "introduction/comparisons"]
-  }
-} 
