@@ -1,0 +1,25 @@
+# 构建产物
+.next/
+build/
+dist/
+out/
+
+# 依赖
+node_modules/
+
+# 日志
+*.log
+
+# 杂项
+.DS_Store
+.env*
+.idea/
+.vscode/
+coverage/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Next.js
+next-env.d.ts 

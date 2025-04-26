@@ -1,13 +1,12 @@
 {
-  "name": "ai-coding-book",
-  "version": "0.0.5",
+  "name": "ai-coding",
+  "version": "0.0.6",
   "description": "Awesome collection of AI Coding and Vibe Coding: code editors, tools, and extensions, such as Cursor, Windsurf, v0, Bolt, Cline, etc.",
   "private": true,
   "scripts": {
     "build": "next build",
     "dev": "next dev --turbo",
-    "start": "next start",
-    "postinstall": "fumadocs-mdx"
+    "start": "next start"
   },
   "keywords": [
     "AI Programming",
@@ -92,23 +91,24 @@
   },
   "homepage": "https://github.com/yayxs/ai-coding#readme",
   "dependencies": {
+    "@next/mdx": "^15.3.1",
     "next": "15.2.4",
     "react": "^19.1.0",
-    "react-dom": "^19.1.0",
-    "fumadocs-ui": "15.2.6",
-    "fumadocs-core": "15.2.6",
-    "fumadocs-mdx": "11.5.8"
+    "react-dom": "^19.1.0"
   },
   "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.3",
+    "@types/mdx": "^2.0.13",
     "@types/node": "22.14.0",
     "@types/react": "^19.1.0",
     "@types/react-dom": "^19.1.1",
-    "typescript": "^5.8.3",
-    "@types/mdx": "^2.0.13",
-    "@tailwindcss/postcss": "^4.1.3",
-    "tailwindcss": "^4.1.3",
-    "postcss": "^8.5.3",
     "eslint": "^8",
-    "eslint-config-next": "15.2.4"
+    "eslint-config-next": "15.2.4",
+    "eslint-config-prettier": "^10.1.2",
+    "postcss": "^8.5.3",
+    "prettier": "^3.5.3",
+    "prettier-plugin-tailwindcss": "^0.6.11",
+    "tailwindcss": "^4.1.3",
+    "typescript": "^5.8.3"
   }
 }
